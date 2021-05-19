@@ -25,6 +25,8 @@
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/platform-server": "^10.2.4",
     "@angular/router": "~10.2.0",
+    "@fullcalendar/angular": "^5.7.0",
+    "@fullcalendar/daygrid": "^5.7.0",
     "@ng-bootstrap/ng-bootstrap": "^8.0.0",
     "@nguniversal/express-engine": "^10.1.0",
     "admin-lte": "^3.0.5",

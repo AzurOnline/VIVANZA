@@ -48,8 +48,19 @@ import { BuroCreditoComponent } from './formatos/buro-credito/buro-credito.compo
 import { CrmmotivoscancelacionComponent } from './crmModule/crmmotivoscancelacion/crmmotivoscancelacion.component';
 import { CrmeditarmotivoscancelacionComponent } from './crmModule/crmeditarmotivoscancelacion/crmeditarmotivoscancelacion.component';
 import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.component';
+import { CalendarioComponent } from './examples/calendario/calendario.component';
+
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
 
+FullCalendarModule.registerPlugins([
+  dayGridPlugin,
+  timeGridPlugin,
+  interactionPlugin
+])
 
 @NgModule({
   declarations: [
@@ -91,7 +102,8 @@ import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.
     BuroCreditoComponent,
     CrmmotivoscancelacionComponent,
     CrmeditarmotivoscancelacionComponent,
-    DesperfiladosComponent
+    DesperfiladosComponent,
+    CalendarioComponent
 
   ],
   imports: [
@@ -101,7 +113,8 @@ import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    FullCalendarModule
   ],
   entryComponents: [
     ModalComponent

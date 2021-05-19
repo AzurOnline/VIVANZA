@@ -7,6 +7,7 @@ import { AuthService } from './services/auth.service';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { filter } from 'rxjs/operators';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -47,7 +48,7 @@ export class AppComponent implements OnInit {
 
     /*     this.activatedRoute.url.subscribe(url => {
           console.log(url);
-    
+
         }); */
 
 
