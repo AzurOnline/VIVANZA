@@ -24,6 +24,7 @@
               "src/assets/img"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
@@ -119,6 +120,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css"
             ],
             "scripts": []
