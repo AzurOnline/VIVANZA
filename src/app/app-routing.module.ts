@@ -32,7 +32,6 @@ import { CrmmotivoscancelacionComponent } from './crmModule/crmmotivoscancelacio
 import { CrmeditarmotivoscancelacionComponent } from './crmModule/crmeditarmotivoscancelacion/crmeditarmotivoscancelacion.component';
 import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.component';
 import { CalendarioComponent } from './examples/calendario/calendario.component';
-import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
 
 
 const routes: Routes = [
@@ -66,8 +65,8 @@ const routes: Routes = [
   { path: 'crmmotivoscancelacion', component: CrmmotivoscancelacionComponent, pathMatch: "full" },
   { path: 'crmeditarmotivoscancelacion', component: CrmeditarmotivoscancelacionComponent, pathMatch: "full" },
   { path: 'desperfilados', component: DesperfiladosComponent, pathMatch: "full" },
-  { path: 'calendario', component: CalendarioComponent, pathMatch: "full" },
-  { path: 'ContratosMain', component: ContratosMainComponent, pathMatch: "full" }
+  { path: 'calendario', component: CalendarioComponent, pathMatch: "full" }
+
 ]
 
 
