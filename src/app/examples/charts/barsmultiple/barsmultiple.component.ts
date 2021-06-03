@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { INSPECT_MAX_BYTES } from 'buffer';
+// import { INSPECT_MAX_BYTES } from 'buffer';
 import * as Chart from 'chart.js';
 
 @Component({
