@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 

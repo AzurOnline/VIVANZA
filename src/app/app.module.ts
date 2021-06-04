@@ -48,7 +48,7 @@ import { BuroCreditoComponent } from './formatos/buro-credito/buro-credito.compo
 import { CrmmotivoscancelacionComponent } from './crmModule/crmmotivoscancelacion/crmmotivoscancelacion.component';
 import { CrmeditarmotivoscancelacionComponent } from './crmModule/crmeditarmotivoscancelacion/crmeditarmotivoscancelacion.component';
 import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.component';
-import { CalendarioComponent } from './examples/calendario/calendario.component';
+
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -61,6 +61,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
+import { AsesoresPromotoresComponent } from './crmModule/asesores-promotores/asesores-promotores.component';
 
 
 registerLocaleData(localeEs);
@@ -106,7 +107,7 @@ registerLocaleData(localeEs);
     CrmmotivoscancelacionComponent,
     CrmeditarmotivoscancelacionComponent,
     DesperfiladosComponent,
-    CalendarioComponent
+    AsesoresPromotoresComponent
 
   ],
   imports: [

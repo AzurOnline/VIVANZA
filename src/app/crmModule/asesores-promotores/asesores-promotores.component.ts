@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { ApiService } from '../services/api.service';
+import {Router} from '@angular/router';
+import {ApiService} from '../../services/api.service';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -46,4 +46,5 @@ export class AsesoresPromotoresComponent implements OnInit {
   EliminarAsesorPromotor(item) {
     // alert("logica para borrar item  " + item);
   }
+
 }
