@@ -101,7 +101,7 @@ export class AppComponent implements OnInit {
     if (this.MODULOSPORGRUPO.length <= 0) {
 
       let data = {
-        "appname": "VIVANZA",
+        "appname": "VIVANZAJR",
         "sp": "Trae_Modulos_Web_Usuario",
         "params": [parseInt(this.id)]
 
