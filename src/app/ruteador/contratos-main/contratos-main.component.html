@@ -1,0 +1,129 @@
+<div class="content-wrapper">
+    <div class="container">
+        <br><br><br>
+        <h1 style="text-align: left" id="title">Contratos</h1>
+        <hr>
+        <br>
+
+
+        <div class="form-group">
+            <label> Cliente: </label> <br>
+            <select ngModel="select"   (ngModelChange)="onSelectId($event)" id="Select" class=" btn btn-outline-warning" style="width: 50%;"
+                tabindex="-1" aria-hidden="true">
+                <option disabled selected> Seleccionar Cliente</option>
+                <option *ngFor="let item of dataset" [ngValue]="item.id">{{item.nombre}}</option>
+
+            </select>
+        </div>
+
+         <div>
+        <label> Empresa: </label> <br>
+        <select ngModel="select1"  (ngModelChange)="onSelect($event)"  id="Select1" class=" btn btn-outline-warning" style="width: 50%;"
+            tabindex="-1" aria-hidden="true">
+            <option disabled selected> Seleccionar Cliente</option>
+            <option *ngFor="let item of dataset" [ngValue]="item.nombre_cliente">{{item.nombre_cliente}}</option>
+      
+        </select>
+      </div>
+
+       
+
+        <br>
+        <h4 style="text-align: center">Seleccionar tipo de contrato:</h4>
+        <br><br>
+
+
+
+        <div class="row">
+            <div class="col">
+                <div class="card text-center">
+
+                    <div class="card-body">
+
+                        <button type="button" (click)="ConfiPF()" class="btn algin-center" id="btn"
+                            data-toggle="tooltip" data-placement="top" title="Llenar formato">
+                            <i class="far fa-edit fa-3x" id="icono"></i>
+                        </button>
+                        <div class="card-body">
+                            <h5 class="card-title">CONFIDENCIALIDAD P.F.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+
+                        <button type="button" (click)="ConPruPf()" class="btn algin-center" id="btn"
+                            data-toggle="tooltip" data-placement="top" title="Llenar formato">
+                            <i class="far fa-edit fa-3x" id="icono"></i>
+                        </button>
+                        <div class="card-body">
+                            <h5 class="card-title">CONTRATO A PRUEBA P.F.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+
+                        <button type="button" (click)="conIndePf()" class="btn algin-center" id="btn"
+                            data-toggle="tooltip" data-placement="top" title="Llenar formato">
+                            <i class="far fa-edit fa-3x" id="icono"></i>
+                        </button>
+                        <div class="card-body">
+                            <h5 class="card-title">CONTRATO INDETERMINADO P.F.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+
+                        <button type="button" (click)="confidePm()" class="btn algin-center" id="btn"
+                            data-toggle="tooltip" data-placement="top" title="Llenar formato">
+                            <i class="far fa-edit fa-3x" id="icono"></i>
+                        </button>
+                        <div class="card-body">
+                            <h5 class="card-title">CONFIDENCIALIDAD P.M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+
+                        <button type="button" (click)="ConPruPm()" class="btn algin-center" id="btn"
+                            data-toggle="tooltip" data-placement="top" title="Llenar formato">
+                            <i class="far fa-edit fa-3x" id="icono"></i>
+                        </button>
+                        <div class="card-body">
+                            <h5 class="card-title">CONTRATO A PRUEBA P.M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+
+                        <button type="button" (click)="conIndePm()" class="btn algin-center" id="btn"
+                            data-toggle="tooltip" data-placement="top" title="Llenar formato">
+                            <i class="far fa-edit fa-3x" id="icono"></i>
+                        </button>
+                        <div class="card-body">
+                            <h5 class="card-title">CONTRATO INDETERMINADO P.M.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

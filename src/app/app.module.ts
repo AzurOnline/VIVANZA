@@ -62,6 +62,14 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { AsesoresPromotoresComponent } from './crmModule/asesores-promotores/asesores-promotores.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
+import { ContratoPmComponent } from './ruteador/contrato-pm/contrato-pm.component';
+import { ContratoPfComponent } from './ruteador/contrato-pf/contrato-pf.component';
+import { ContratoIndePmComponent } from './ruteador/contrato-inde-pm/contrato-inde-pm.component';
+import { ContratoIndePfComponent } from './ruteador/contrato-inde-pf/contrato-inde-pf.component';
+import { ConfidePmComponent } from './ruteador/confide-pm/confide-pm.component';
+import { ConfidePfComponent } from './ruteador/confide-pf/confide-pf.component';
 
 
 registerLocaleData(localeEs);
@@ -107,7 +115,15 @@ registerLocaleData(localeEs);
     CrmmotivoscancelacionComponent,
     CrmeditarmotivoscancelacionComponent,
     DesperfiladosComponent,
-    AsesoresPromotoresComponent
+    AsesoresPromotoresComponent,
+    ResetPasswordComponent,
+    ContratosMainComponent,
+    ContratoPmComponent,
+    ContratoPfComponent,
+    ContratoIndePmComponent,
+    ContratoIndePfComponent,
+    ConfidePmComponent,
+    ConfidePfComponent
 
   ],
   imports: [
