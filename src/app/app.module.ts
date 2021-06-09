@@ -48,12 +48,6 @@ import { BuroCreditoComponent } from './formatos/buro-credito/buro-credito.compo
 import { CrmmotivoscancelacionComponent } from './crmModule/crmmotivoscancelacion/crmmotivoscancelacion.component';
 import { CrmeditarmotivoscancelacionComponent } from './crmModule/crmeditarmotivoscancelacion/crmeditarmotivoscancelacion.component';
 import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.component';
-
-
-import { FullCalendarModule } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CommonModule } from '@angular/common';
@@ -62,7 +56,15 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { AsesoresPromotoresComponent } from './crmModule/asesores-promotores/asesores-promotores.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from "@fullcalendar/interaction"; // a plugin
+import { CalendarComponent } from './examples/calendar/calendar.component';
 
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 registerLocaleData(localeEs);
 
@@ -107,7 +109,8 @@ registerLocaleData(localeEs);
     CrmmotivoscancelacionComponent,
     CrmeditarmotivoscancelacionComponent,
     DesperfiladosComponent,
-    AsesoresPromotoresComponent
+    AsesoresPromotoresComponent,
+    CalendarComponent
 
   ],
   imports: [
@@ -118,9 +121,10 @@ registerLocaleData(localeEs);
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    FullCalendarModule,
+    // FullCalendarModule,
     FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    FullCalendarModule
   ],
   entryComponents: [
     ModalComponent
