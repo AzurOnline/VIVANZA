@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
 
     let data = {
-      "appname": "VIVANZA",
+      "appname": "VIVANZAJR",
       "params": {
         "usuario": this.loginForm.email,
         "contrasena": this.loginForm.pass

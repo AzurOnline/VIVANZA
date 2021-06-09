@@ -60,6 +60,14 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from "@fullcalendar/interaction"; // a plugin
 import { CalendarComponent } from './examples/calendar/calendar.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
+import { ContratoPmComponent } from './ruteador/contrato-pm/contrato-pm.component';
+import { ContratoPfComponent } from './ruteador/contrato-pf/contrato-pf.component';
+import { ContratoIndePmComponent } from './ruteador/contrato-inde-pm/contrato-inde-pm.component';
+import { ContratoIndePfComponent } from './ruteador/contrato-inde-pf/contrato-inde-pf.component';
+import { ConfidePmComponent } from './ruteador/confide-pm/confide-pm.component';
+import { ConfidePfComponent } from './ruteador/confide-pf/confide-pf.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -110,7 +118,15 @@ registerLocaleData(localeEs);
     CrmeditarmotivoscancelacionComponent,
     DesperfiladosComponent,
     AsesoresPromotoresComponent,
-    CalendarComponent
+    CalendarComponent,
+    ResetPasswordComponent,
+    ContratosMainComponent,
+    ContratoPmComponent,
+    ContratoPfComponent,
+    ContratoIndePmComponent,
+    ContratoIndePfComponent,
+    ConfidePmComponent,
+    ConfidePfComponent
 
   ],
   imports: [

@@ -33,11 +33,14 @@ import { CrmmotivoscancelacionComponent } from './crmModule/crmmotivoscancelacio
 import { CrmeditarmotivoscancelacionComponent } from './crmModule/crmeditarmotivoscancelacion/crmeditarmotivoscancelacion.component';
 import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.component';
 import { AsesoresPromotoresComponent } from './crmModule/asesores-promotores/asesores-promotores.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: "full" },
   { path: 'examples', component: HomeComponent, pathMatch: "full" },
   { path: 'login', component: LoginComponent, pathMatch: "full" },
+  { path: 'reset-password', component: ResetPasswordComponent , pathMatch: "full" },
   { path: 'home', component: DashboardComponent, pathMatch: "full" },
   { path: 'clientes', component: ClientesComponent, pathMatch: "full" },
   { path: 'abcclientes', component: AbcclientesComponent, pathMatch: "full" },
@@ -66,7 +69,9 @@ const routes: Routes = [
   { path: 'crmeditarmotivoscancelacion', component: CrmeditarmotivoscancelacionComponent, pathMatch: "full" },
   { path: 'desperfilados', component: DesperfiladosComponent, pathMatch: "full" },
   { path: 'asesores-promotores', component: AsesoresPromotoresComponent, pathMatch: "full" },
-  { path: 'calendario', component: CalendarComponent, pathMatch: "full" }
+  { path: 'calendario', component: CalendarComponent, pathMatch: "full" },
+  { path: 'contratos-main', component: ContratosMainComponent, pathMatch: "full" }
+
 ]
 
 
