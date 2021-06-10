@@ -4,6 +4,7 @@ import { ApiService } from '../../services/api.service';
 import { NgbModal, ModalDismissReasons, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../../examples/modal/modal.component';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-contratos-main',
   templateUrl: './contratos-main.component.html',
@@ -24,7 +25,7 @@ export class ContratosMainComponent implements OnInit {
   public dataset1;
   public selectedClient;
   constructor(
-    
+    private router: Router,
     public apiService: ApiService,
     private modalService: NgbModal,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -42,41 +43,48 @@ export class ContratosMainComponent implements OnInit {
   }
  
   ConfiPF() {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
-    modalRef.componentInstance.my_modal_content = 'Contenido normal';
-    modalRef.componentInstance.my_modal_color = 'normal-title';
+
+    this.router.navigate(['/confidepf']);
+    // const modalRef = this.modalService.open(ModalComponent);
+    // modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
+    // modalRef.componentInstance.my_modal_content = 'Contenido normal';
+    // modalRef.componentInstance.my_modal_color = 'normal-title';
   }
   ConPruPf() {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
-    modalRef.componentInstance.my_modal_content = 'Contenido normal';
-    modalRef.componentInstance.my_modal_color = 'normal-title';
+    this.router.navigate(['/contratoPF']);
+    // const modalRef = this.modalService.open(ModalComponent);
+    // modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
+    // modalRef.componentInstance.my_modal_content = 'Contenido normal';
+    // modalRef.componentInstance.my_modal_color = 'normal-title';
   }
   
-  conIndePf() {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
-    modalRef.componentInstance.my_modal_content = 'Contenido normal';
-    modalRef.componentInstance.my_modal_color = 'normal-title';
+  conIndePf() { 
+    this.router.navigate(['/conindefPF']);
+    // const modalRef = this.modalService.open(ModalComponent);
+    // modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
+    // modalRef.componentInstance.my_modal_content = 'Contenido normal';
+    // modalRef.componentInstance.my_modal_color = 'normal-title';
   }
-  confidePm() {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
-    modalRef.componentInstance.my_modal_content = 'Contenido normal';
-    modalRef.componentInstance.my_modal_color = 'normal-title';
+  confidePm() { 
+    this.router.navigate(['/confidePM']);
+    // const modalRef = this.modalService.open(ModalComponent);
+    // modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
+    // modalRef.componentInstance.my_modal_content = 'Contenido normal';
+    // modalRef.componentInstance.my_modal_color = 'normal-title';
   }
   ConPruPm() {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
-    modalRef.componentInstance.my_modal_content = 'Contenido normal';
-    modalRef.componentInstance.my_modal_color = 'normal-title';
+    this.router.navigate(['/contratoPM']);
+    // const modalRef = this.modalService.open(ModalComponent);
+    // modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
+    // modalRef.componentInstance.my_modal_content = 'Contenido normal';
+    // modalRef.componentInstance.my_modal_color = 'normal-title';
   }
   conIndePm() {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
-    modalRef.componentInstance.my_modal_content = 'Contenido normal';
-    modalRef.componentInstance.my_modal_color = 'normal-title';
+    this.router.navigate(['/confidepm']);
+    // const modalRef = this.modalService.open(ModalComponent);
+    // modalRef.componentInstance.my_modal_title = 'Seleccionar Cliente';
+    // modalRef.componentInstance.my_modal_content = 'Contenido normal';
+    // modalRef.componentInstance.my_modal_color = 'normal-title';
   }
 
   ComboCliente (){

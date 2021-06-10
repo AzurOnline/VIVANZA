@@ -35,6 +35,12 @@ import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.
 import { AsesoresPromotoresComponent } from './crmModule/asesores-promotores/asesores-promotores.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
+import { ContratoPmComponent } from './ruteador/contrato-pm/contrato-pm.component';
+import { ConfidePfComponent } from './ruteador/confide-pf/confide-pf.component';
+import { ConfidePmComponent } from './ruteador/confide-pm/confide-pm.component';
+import { ContratoIndePfComponent } from './ruteador/contrato-inde-pf/contrato-inde-pf.component';
+import { ContratoIndePmComponent } from './ruteador/contrato-inde-pm/contrato-inde-pm.component';
+import { ContratoPfComponent } from './ruteador/contrato-pf/contrato-pf.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: "full" },
@@ -71,7 +77,14 @@ const routes: Routes = [
   { path: 'asesores-promotores', component: AsesoresPromotoresComponent, pathMatch: "full" },
   { path: 'calendario', component: CalendarComponent, pathMatch: "full" },
   { path: 'contratos-main', component: ContratosMainComponent, pathMatch: "full" },
-  { path: 'reset-password', component: ResetPasswordComponent,pathMatch:"full"}
+  { path: 'reset-password', component: ResetPasswordComponent,pathMatch:"full"},
+  { path: 'confidepf', component: ConfidePfComponent, pathMatch: "full" },
+  { path: 'confidepm', component:ConfidePmComponent,pathMatch:"full"},
+  { path: 'contratoindepf', component:ContratoIndePfComponent,pathMatch:"full"},
+  { path: 'contratoindepm', component:ContratoIndePmComponent,pathMatch:"full"},
+  { path: 'contratopf', component:ContratoPfComponent,pathMatch:"full"},
+  { path: 'contratoPM', component:ContratoPmComponent,pathMatch:"full"}
+  
 
 ]
 
