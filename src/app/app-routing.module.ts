@@ -70,7 +70,8 @@ const routes: Routes = [
   { path: 'desperfilados', component: DesperfiladosComponent, pathMatch: "full" },
   { path: 'asesores-promotores', component: AsesoresPromotoresComponent, pathMatch: "full" },
   { path: 'calendario', component: CalendarComponent, pathMatch: "full" },
-  { path: 'contratos-main', component: ContratosMainComponent, pathMatch: "full" }
+  { path: 'contratos-main', component: ContratosMainComponent, pathMatch: "full" },
+  { path: 'reset-password', component: ResetPasswordComponent,pathMatch:"full"}
 
 ]
 
