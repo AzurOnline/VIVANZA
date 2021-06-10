@@ -79,9 +79,12 @@ export class ApiService {
 
   //reset password
   public resetPassword(data) {
-    return this.http.post(this.serviceUrl + 'resetPassword/', data);
+    return this.http.post(this.serviceUrl + 'createCode/', data);
   }
 
+  public createNewPassword(data) {
+    return this.http.post(this.serviceUrl + 'resetPassword/', data);
+  }
 
 
 }
