@@ -48,12 +48,6 @@ import { BuroCreditoComponent } from './formatos/buro-credito/buro-credito.compo
 import { CrmmotivoscancelacionComponent } from './crmModule/crmmotivoscancelacion/crmmotivoscancelacion.component';
 import { CrmeditarmotivoscancelacionComponent } from './crmModule/crmeditarmotivoscancelacion/crmeditarmotivoscancelacion.component';
 import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.component';
-
-
-import { FullCalendarModule } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CommonModule } from '@angular/common';
@@ -62,6 +56,10 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { AsesoresPromotoresComponent } from './crmModule/asesores-promotores/asesores-promotores.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from "@fullcalendar/interaction"; // a plugin
+import { CalendarComponent } from './examples/calendar/calendar.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
 import { ContratoPmComponent } from './ruteador/contrato-pm/contrato-pm.component';
@@ -71,6 +69,10 @@ import { ContratoIndePfComponent } from './ruteador/contrato-inde-pf/contrato-in
 import { ConfidePmComponent } from './ruteador/confide-pm/confide-pm.component';
 import { ConfidePfComponent } from './ruteador/confide-pf/confide-pf.component';
 
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 registerLocaleData(localeEs);
 
@@ -116,6 +118,7 @@ registerLocaleData(localeEs);
     CrmeditarmotivoscancelacionComponent,
     DesperfiladosComponent,
     AsesoresPromotoresComponent,
+    CalendarComponent,
     ResetPasswordComponent,
     ContratosMainComponent,
     ContratoPmComponent,
@@ -134,9 +137,10 @@ registerLocaleData(localeEs);
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    FullCalendarModule,
+    // FullCalendarModule,
     FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    FullCalendarModule
   ],
   entryComponents: [
     ModalComponent

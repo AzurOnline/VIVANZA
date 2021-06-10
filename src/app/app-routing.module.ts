@@ -1,3 +1,4 @@
+import { CalendarComponent } from './examples/calendar/calendar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClientesComponent } from '../app/clientesModule/clientes/clientes.component';
@@ -68,6 +69,7 @@ const routes: Routes = [
   { path: 'crmeditarmotivoscancelacion', component: CrmeditarmotivoscancelacionComponent, pathMatch: "full" },
   { path: 'desperfilados', component: DesperfiladosComponent, pathMatch: "full" },
   { path: 'asesores-promotores', component: AsesoresPromotoresComponent, pathMatch: "full" },
+  { path: 'calendario', component: CalendarComponent, pathMatch: "full" },
   { path: 'contratos-main', component: ContratosMainComponent, pathMatch: "full" }
 
 ]
