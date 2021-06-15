@@ -57,8 +57,12 @@ import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { AsesoresPromotoresComponent } from './crmModule/asesores-promotores/asesores-promotores.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import 'bootstrap/dist/css/bootstrap.css';
+import '@fortawesome/fontawesome-free/css/all.css'; // needs additional webpack config!
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from "@fullcalendar/interaction"; // a plugin
+import timeGridPlugin from '@fullcalendar/timegrid';
+import bootstrapPlugin from '@fullcalendar/bootstrap';
 import { CalendarComponent } from './examples/calendar/calendar.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
@@ -71,7 +75,9 @@ import { ConfidePfComponent } from './ruteador/confide-pf/confide-pf.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
-  interactionPlugin
+  interactionPlugin,
+  timeGridPlugin,
+  bootstrapPlugin
 ]);
 
 registerLocaleData(localeEs);
