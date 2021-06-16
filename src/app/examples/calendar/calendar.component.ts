@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalEventosComponent } from '../calendar/modal-eventos/modal-eventos.component';
 
 @Component({
   selector: 'app-calendar',
@@ -30,8 +30,8 @@ export class CalendarComponent implements OnInit {
       endTime: '17:00', // Tiempo en el que termina el evento (5pm)
     },
 
-    weekNumbers: true, // Muestra el numero de las semanas del anio
-    weekText: 'Semana ', // En lugar de mostrar "W1, W2..." se mostrara "Semana 1, Semana 2..."
+    // weekNumbers: true, // Muestra el numero de las semanas del anio
+    // weekText: 'Semana ', // En lugar de mostrar "W1, W2..." se mostrara "Semana 1, Semana 2..."
 
     navLinks: true, //Se activan links para poder acceder al dia o la semana de manera rapida
 
@@ -51,8 +51,8 @@ export class CalendarComponent implements OnInit {
     },
 
     events: [
-      { title: 'evento prueba 1', date: '2021-06-14' },
-      { title: 'evento prueba 2', date: '2021-06-15' }
+      { title: 'evento prueba 1', date: '2021-06-20', },
+      { title: 'evento prueba 2', date: '2021-06-21' }
     ],
 
     editable: true,
@@ -68,8 +68,7 @@ export class CalendarComponent implements OnInit {
 
   handleDateClick(arg) {
     this.fechaSeleccionada = arg.dateStr;
-    $('#modal-evento').modal('show');
-    // this.openNormal(arg.dateStr);
+    this.openNormal(arg.dateStr);
   }
 
   constructor(private modalService: NgbModal) { }
@@ -78,9 +77,9 @@ export class CalendarComponent implements OnInit {
   }
 
   openNormal(diaSeleccionado) {
-    const modalRef = this.modalService.open(ModalComponent);
+    const modalRef = this.modalService.open(ModalEventosComponent);
     modalRef.componentInstance.my_modal_title = 'Añadir evento a la fecha: ' + diaSeleccionado;
-    modalRef.componentInstance.my_modal_content = 'Contenido normal';
+    // modalRef.componentInstance.my_modal_content = 'Contenido normal';
     modalRef.componentInstance.my_modal_color = 'normal-title';
   }
 }

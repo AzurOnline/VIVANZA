@@ -63,6 +63,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from "@fullcalendar/interaction"; // a plugin
 import timeGridPlugin from '@fullcalendar/timegrid';
 import bootstrapPlugin from '@fullcalendar/bootstrap';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { CalendarComponent } from './examples/calendar/calendar.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
@@ -72,6 +73,8 @@ import { ContratoIndePmComponent } from './ruteador/contrato-inde-pm/contrato-in
 import { ContratoIndePfComponent } from './ruteador/contrato-inde-pf/contrato-inde-pf.component';
 import { ConfidePmComponent } from './ruteador/confide-pm/confide-pm.component';
 import { ConfidePfComponent } from './ruteador/confide-pf/confide-pf.component';
+import { ModalEventosComponent } from './examples/calendar/modal-eventos/modal-eventos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -132,7 +135,8 @@ registerLocaleData(localeEs);
     ContratoIndePmComponent,
     ContratoIndePfComponent,
     ConfidePmComponent,
-    ConfidePfComponent
+    ConfidePfComponent,
+    ModalEventosComponent
 
   ],
   imports: [
@@ -146,7 +150,9 @@ registerLocaleData(localeEs);
     // FullCalendarModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
-    FullCalendarModule
+    FullCalendarModule,
+    NgxMaterialTimepickerModule.setLocale('es-MX'),
+    BrowserAnimationsModule
   ],
   entryComponents: [
     ModalComponent
