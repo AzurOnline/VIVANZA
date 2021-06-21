@@ -1,31 +1,36 @@
-<div class="modal-header" class="{{my_modal_color}}">
-  <h4 class="modal-title">{{my_modal_title}}</h4>
-  <div class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
+<div [formGroup]="eventoForm">
+  <div class="modal-header" class="{{my_modal_color}}">
+    <h4 class="modal-title">{{my_modal_title + fecha_evento}}</h4>
+    <div class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </div>
   </div>
-</div>
-<div class="modal-body">
-  <div class="form-group">
-    <label for="">Nombre del evento</label>
-    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Nombre del evento">
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="">Nombre del evento</label>
+      <input type="text" formControlName="nombre_evento" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Nombre del evento">
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" formControlName="todo_el_dia" class="form-check-input" name="" id="" value="checkedValue" (change)="allDaycheck($event)">
+        Todo el día
+      </label>
+    </div>
+    <div id="horario">
+      <div class="ngx-timepicker" id="horaInicio">
+        <label>Hora de inicio</label>
+        <ngx-timepicker-field formControlName="fecha_inicio" [format]="24" [buttonAlign]="'left'"></ngx-timepicker-field>
+      </div>
+      <div class="ngx-timepicker" id="horaFin">
+        <label>Hora de finalización</label>
+        <ngx-timepicker-field formControlName="fecha_finalizacion" [format]="24" [buttonAlign]="'left'"></ngx-timepicker-field>
+      </div>
+    </div>
   </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" (change)="allDaycheck($event.target)">
-      Todo el día
-    </label>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-black" (click)="GuardaEvento()">Guardar</button>
+    <button type="button" class="btn btn-outline-black" (click)="activeModal.close('Close click')">Cerrar</button>
+
   </div>
-  <div class="ngx-timepicker">
-    <label>Hora de inicio</label>
-    <ngx-timepicker-field [buttonAlign]="'left'"></ngx-timepicker-field>
-  </div>
-  <div class="ngx-timepicker">
-    <label>Hora de finalización</label>
-    <ngx-timepicker-field [buttonAlign]="'left'"></ngx-timepicker-field>
-  </div>
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-outline-black">Guardar</button>
-  <button type="button" class="btn btn-outline-black" (click)="activeModal.close('Close click')">Cerrar</button>
 
 </div>

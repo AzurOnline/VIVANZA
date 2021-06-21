@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { CalendarOptions } from '@fullcalendar/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CalendarOptions, FullCalendarComponent } from '@fullcalendar/angular';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ApiService } from 'src/app/services/api.service';
 import { ModalEventosComponent } from '../calendar/modal-eventos/modal-eventos.component';
 
 @Component({
@@ -8,9 +9,14 @@ import { ModalEventosComponent } from '../calendar/modal-eventos/modal-eventos.c
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
+
 export class CalendarComponent implements OnInit {
 
+  // references the #calendar in the template
+  @ViewChild('calendar') calendarComponent: FullCalendarComponent;
+
   public fechaSeleccionada;
+  public eventos = [];
 
   calendarOptions: CalendarOptions = {
 
@@ -50,10 +56,7 @@ export class CalendarComponent implements OnInit {
       day: 'Día'
     },
 
-    events: [
-      { title: 'evento prueba 1', date: '2021-06-20', },
-      { title: 'evento prueba 2', date: '2021-06-21' }
-    ],
+    events: this.eventos,
 
     editable: true,
 
@@ -71,14 +74,41 @@ export class CalendarComponent implements OnInit {
     this.openNormal(arg.dateStr);
   }
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.TraeEventos();
   }
 
+  TraeEventos(){
+    let data = {
+      "appname":"VIVANZAJR",
+      "sp": "dvp.Trae_Eventos_Calendario",
+      "params" : []
+    }
+
+    this.apiService.ejecuta(data).subscribe((response) => {
+      let _response;
+      _response = response;
+
+      _response.success.recordset.forEach(element => {
+        var evento =
+          { title: element.title,
+          start: element.startDate,
+          end: element.endDate,
+          allDay: element.allDay
+        };
+        this.eventos.push(evento);
+      });
+
+      let calendarApi = this.calendarComponent.getApi();
+      calendarApi.addEventSource(this.eventos);
+      })
+  }
   openNormal(diaSeleccionado) {
     const modalRef = this.modalService.open(ModalEventosComponent);
-    modalRef.componentInstance.my_modal_title = 'Añadir evento a la fecha: ' + diaSeleccionado;
+    modalRef.componentInstance.my_modal_title = 'Añadir evento a la fecha: ';
+    modalRef.componentInstance.fecha_evento = diaSeleccionado;
     // modalRef.componentInstance.my_modal_content = 'Contenido normal';
     modalRef.componentInstance.my_modal_color = 'normal-title';
   }
