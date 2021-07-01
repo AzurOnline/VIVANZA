@@ -1,3 +1,4 @@
+import { ModalsService } from './../../services/modals.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CalendarOptions, FullCalendarComponent } from '@fullcalendar/angular';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +25,24 @@ export class CalendarComponent implements OnInit {
 
     initialView: 'dayGridMonth',
     dateClick: this.handleDateClick.bind(this), // bind importante!
+    select: this.handleSelection.bind(this),
+    eventResize: this.handleResizeEvent.bind(this),
+    eventDrop: function (infoDropped) {
+      alert(infoDropped.event.startStr);
+      alert(infoDropped.event.endStr);
+    },
+
+    // dateClick: function (arg) {
+    //   alert(arg.dateStr);
+    // },
+    // select: function (arg) {
+    //   arg.end.setDate(arg.end.getDate() - 1);
+    //   if(arg.end.getDate() != arg.start.getDate())
+    //     alert(arg.end.toISOString());
+    // },
+    // eventResize: function (arg) {
+
+    // },
     validRange: {
       start: Date.now(),
     },
@@ -43,7 +62,9 @@ export class CalendarComponent implements OnInit {
 
     nowIndicator: true, //Indica la hora en la que se esta en las vistas de Semanas y Dias
 
-    locale: 'es', //Idioma al espaniol
+    locale: 'es', //Idioma al español
+
+    selectable: true,
 
     headerToolbar: {
       start: 'title',
@@ -60,18 +81,27 @@ export class CalendarComponent implements OnInit {
 
     editable: true,
 
-    eventResize: function(info) {
-      alert(info.event.title + " end is now " + info.event.end.toISOString());
-
-      if (!confirm("is this okay?")) {
-        info.revert();
-      }
-    }
   };
 
   handleDateClick(arg) {
     this.fechaSeleccionada = arg.dateStr;
-    this.openNormal(arg.dateStr);
+    this.openEventoDia(arg.dateStr, this.calendarComponent.getApi());
+  }
+
+  handleSelection (selectedInfo) {
+    selectedInfo.end.setDate(selectedInfo.end.getDate() - 1);
+      if(selectedInfo.end.getDate() != selectedInfo.start.getDate())
+    this.openEventoRango(selectedInfo.start.toISOString().substring(0, 10), selectedInfo.end.toISOString().substring(0, 10), this.calendarComponent.getApi())
+  }
+
+  handleResizeEvent(info) {
+    let end_temp = info.event.end;
+    end_temp.setDate(end_temp.getDate() - 1);
+    alert(info.event.title + " termina ahora termina en " + end_temp.toISOString().substring(0,10));
+
+    if (!confirm("¿Confirma el cambio de fecha?")) {
+      info.revert();
+    }
   }
 
   constructor(private modalService: NgbModal, private apiService: ApiService) { }
@@ -105,11 +135,23 @@ export class CalendarComponent implements OnInit {
       calendarApi.addEventSource(this.eventos);
       })
   }
-  openNormal(diaSeleccionado) {
+  openEventoDia(diaSeleccionado, calendarApi) {
     const modalRef = this.modalService.open(ModalEventosComponent);
     modalRef.componentInstance.my_modal_title = 'Añadir evento a la fecha: ';
     modalRef.componentInstance.fecha_evento = diaSeleccionado;
-    // modalRef.componentInstance.my_modal_content = 'Contenido normal';
+    modalRef.componentInstance.calendarApi = calendarApi;
+    modalRef.componentInstance.fecha_rango = false;
+    modalRef.componentInstance.my_modal_color = 'normal-title';
+  }
+
+  openEventoRango(fechaInicio, fechaFin, calendarApi) {
+    const modalRef = this.modalService.open(ModalEventosComponent);
+    modalRef.componentInstance.my_modal_title = 'Añadir evento desde la fecha: ';
+    modalRef.componentInstance.fecha_evento = fechaInicio + " hasta " + fechaFin;
+    modalRef.componentInstance.fecha_inicio = fechaInicio;
+    modalRef.componentInstance.fecha_fin = fechaFin;
+    modalRef.componentInstance.calendarApi = calendarApi;
+    modalRef.componentInstance.fecha_rango = true;
     modalRef.componentInstance.my_modal_color = 'normal-title';
   }
 }

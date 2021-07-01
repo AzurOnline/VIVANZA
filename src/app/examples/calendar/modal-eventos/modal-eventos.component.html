@@ -8,22 +8,40 @@
   <div class="modal-body">
     <div class="form-group">
       <label for="">Nombre del evento</label>
-      <input type="text" formControlName="nombre_evento" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Nombre del evento">
+      <input type="text" formControlName="nombre_evento" class="form-control" name="" id="" aria-describedby="helpId"
+        placeholder="Nombre del evento">
     </div>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="checkbox" formControlName="todo_el_dia" class="form-check-input" name="" id="" value="checkedValue" (change)="allDaycheck($event)">
-        Todo el día
-      </label>
-    </div>
-    <div id="horario">
-      <div class="ngx-timepicker" id="horaInicio">
-        <label>Hora de inicio</label>
-        <ngx-timepicker-field formControlName="fecha_inicio" [format]="24" [buttonAlign]="'left'"></ngx-timepicker-field>
+    <div [hidden]="fecha_rango" id="formEventoDia">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" formControlName="todo_el_dia" class="form-check-input" name="" id=""
+            value="checkedValue" (change)="allDaycheck($event)">
+          Todo el día
+        </label>
       </div>
-      <div class="ngx-timepicker" id="horaFin">
-        <label>Hora de finalización</label>
-        <ngx-timepicker-field formControlName="fecha_finalizacion" [format]="24" [buttonAlign]="'left'"></ngx-timepicker-field>
+      <div id="horario">
+        <div class="ngx-timepicker" id="horaInicio">
+          <label>Hora de inicio</label>
+          <ngx-timepicker-field formControlName="hora_inicio" [format]="24" [buttonAlign]="'left'">
+          </ngx-timepicker-field>
+        </div>
+        <div class="ngx-timepicker" id="horaFin">
+          <label>Hora de finalización</label>
+          <ngx-timepicker-field formControlName="hora_fin" [format]="24" [buttonAlign]="'left'">
+          </ngx-timepicker-field>
+        </div>
+      </div>
+    </div>
+    <div [hidden]="!fecha_rango" id="formEventoRango">
+      <div class="form-group">
+        <label for="">Fecha de inicio</label>
+        <input type="date" [(ngModel)]="fecha_inicio" class="form-control" formControlName="fecha_inicio"
+          name="fechaIni" id="fechaIni" aria-describedby="fechaIni" placeholder="Fecha de inico">
+      </div>
+      <div class="form-group">
+        <label for="">Fecha de Finalizacion</label>
+        <input type="date" [(ngModel)]="fecha_fin" class="form-control" formControlName="fecha_fin"
+          name="fechaFin" id="fechaFin" aria-describedby="fechaFin" placeholder="Fecha de finalización">
       </div>
     </div>
   </div>
