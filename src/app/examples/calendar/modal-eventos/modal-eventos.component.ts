@@ -46,6 +46,7 @@ export class ModalEventosComponent implements OnInit {
   }
 
   GuardaEvento() {
+    //Para guardar las fechas necesitan este formato yyyy/MM/ddTHH:mm:ss
 
       if (this.eventoForm.value.nombre_evento == '')
         alert('El evento no puede ir en blanco.');
@@ -55,20 +56,21 @@ export class ModalEventosComponent implements OnInit {
 
         if (this.fecha_rango) {
           let fecha_fin_tem = new Date(this.eventoForm.value.fecha_fin);
-          fecha_fin_tem.setDate(fecha_fin_tem.getDate() + 2)
-          this.eventoForm.value.fecha_fin = fecha_fin_tem.toISOString().substring(0, 10);
-          fechaIni = this.eventoForm.value.fecha_inicio + "T" + "00:00:00Z";
-          fechaFin = this.eventoForm.value.fecha_fin + "T" + "00:00:00Z";
+          fecha_fin_tem.setDate(fecha_fin_tem.getDate() + 1)
+          this.eventoForm.value.fecha_fin = fecha_fin_tem.toISOString().substring(0, 10); //Esto es para que se obtenga el siguiente formato yyyy/MM/dd
+          fechaIni = this.eventoForm.value.fecha_inicio + "T" + "00:00:00";
+          fechaFin = this.eventoForm.value.fecha_fin + "T" + "00:00:00";
           this.eventoForm.value.todo_el_dia = true;
         }
         else {
-          fechaIni = this.fecha_evento + "T" + (this.eventoForm.value.todo_el_dia ? "00:00" : this.eventoForm.value.hora_inicio) + ":00Z";
-          fechaFin = this.fecha_evento + "T" + (this.eventoForm.value.todo_el_dia ? "00:00" : this.eventoForm.value.hora_fin) + ":00Z";
+          fechaIni = this.fecha_evento + "T" + (this.eventoForm.value.todo_el_dia ? "00:00" : this.eventoForm.value.hora_inicio) + ":00";
+          fechaFin = this.fecha_evento + "T" + (this.eventoForm.value.todo_el_dia ? "00:00" : this.eventoForm.value.hora_fin) + ":00";
           }
         let data = {
           "appname": "VIVANZAJR",
           "sp": "dvp.Guarda_Eventos_Calendario",
           "params": [
+            0 + ",",
             this.eventoForm.value.todo_el_dia + ",",
             "'" + this.eventoForm.value.nombre_evento + "',",
             "'" + fechaIni + "',",
@@ -80,11 +82,11 @@ export class ModalEventosComponent implements OnInit {
         this.apiService.ejecuta(data).subscribe((response) => {
           let _response;
           _response = response;
-
-          if (_response.success.recordset[0].guardado) {
+          let data = _response.success.recordset[0];
+          if (data.guardado) {
             alert('Calendario actualizado exitosamente');
-            let calendar = new CalendarComponent(this.modalService, this.apiService);
             this.calendarApi.addEvent({
+              id: data.id,
               title: this.eventoForm.value.nombre_evento,
               start: fechaIni,
               end: fechaFin,
