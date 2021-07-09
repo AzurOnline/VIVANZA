@@ -3,7 +3,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from 'src/app/services/api.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modal-eventos',
@@ -21,8 +20,7 @@ export class ModalEventosComponent implements OnInit {
   constructor(
     public activeModal: NgbActiveModal,
     public formBuilder: FormBuilder,
-    private apiService: ApiService,
-    private modalService: NgbModal
+    private apiService: ApiService
   ) { }
 
   eventoForm = this.formBuilder.group({

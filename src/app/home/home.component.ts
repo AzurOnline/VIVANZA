@@ -1,11 +1,14 @@
+// import { EmailService } from './../services/email.service';
 import { Component, OnInit, ViewChild, ElementRef, PLATFORM_ID, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NgbModal, ModalDismissReasons, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../examples/modal/modal.component';
+import { ModalEmailComponent } from '../examples/modal-email/modal-email.component';
 import { isPlatformBrowser } from '@angular/common';
 import { ExportService } from '../services/export.service';
+
 
 
 @Component({
@@ -38,7 +41,7 @@ export class HomeComponent implements OnInit {
   public dataset;
 
   //para grafica de barras sencilla y pie
-  public tipoGraficaBarras = "line";  //line, bar 
+  public tipoGraficaBarras = "line";  //line, bar
   public tipoGraficaPie = "polarArea"; //pie, doughnut,radar,polarArea
 
   public tituloGrafica = "Ventas";
@@ -128,6 +131,12 @@ export class HomeComponent implements OnInit {
     modalRef.componentInstance.my_modal_title = 'Titulo de modal';
     modalRef.componentInstance.my_modal_content = 'Contenido normal';
     modalRef.componentInstance.my_modal_color = 'success-title';
+  }
+
+  openEmail() {
+    const modalRef = this.modalService.open(ModalEmailComponent);
+    modalRef.componentInstance.my_modal_title = 'Correo Electronico';
+    modalRef.componentInstance.my_modal_color = 'normal-title';
   }
 
 
@@ -251,8 +260,8 @@ export class HomeComponent implements OnInit {
   /*  public respFile: any;
    public fotoGuardada: string; */
   /*   uploadFile(formData, capt) {
-  
-  
+
+
       return this.http.post('http://mobinsa2.dyndns.org:49203/api/UploadFiles/', formData).
         subscribe(data => {
           this.respFile = data;
@@ -265,15 +274,15 @@ export class HomeComponent implements OnInit {
           console.log(error);
           return this.respFile;
         });
-  
+
       return this.respFile;
     } */
 
   //this is new
   /*   uploadPhoto(formData) {
-  
+
       this.apiService.uploadPhoto(formData)
-  
+
     } */
 
 

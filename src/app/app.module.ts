@@ -1,3 +1,4 @@
+import { ModalEmailComponent } from './examples/modal-email/modal-email.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -136,7 +137,8 @@ registerLocaleData(localeEs);
     ContratoIndePfComponent,
     ConfidePmComponent,
     ConfidePfComponent,
-    ModalEventosComponent
+    ModalEventosComponent,
+    ModalEmailComponent
 
   ],
   imports: [
@@ -155,7 +157,9 @@ registerLocaleData(localeEs);
     BrowserAnimationsModule
   ],
   entryComponents: [
-    ModalComponent
+    ModalComponent,
+    ModalEventosComponent,
+    ModalEmailComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

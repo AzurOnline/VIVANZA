@@ -86,5 +86,8 @@ export class ApiService {
     return this.http.post(this.serviceUrl + 'resetPassword/', data);
   }
 
+  public EnviaEmail(data) {
+    return this.http.post('http://localhost:4000/api/EnviarEmail/', data);
+  }
 
 }
