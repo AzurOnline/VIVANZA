@@ -21,8 +21,8 @@
       </textarea>
     </div>
     <div class="form-group">
-      <input type="file" title="Añadir archivo" formControlName="emailAttachment" class="form-control"
-        name="emailAttachment" id="emailAttachment" aria-describedby="emailAttachment" placeholder="">
+      <input type="file" file-model="email.attachment" title="Añadir archivo" formControlName="emailAttachment" class="form-control"
+        name="emailAttachment" id="emailAttachment" aria-describedby="emailAttachment" placeholder="" (change)="fileChange($event)">
     </div>
   </div>
   <div class="modal-footer">
