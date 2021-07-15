@@ -2,9 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const multer = require('multer');
+var path = require('path');
 
-app = express(),
-    app.use(cors({ origin: "*" }));
+app = express();
+app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
 // port = process.env.PORT || 3000;
@@ -14,7 +16,16 @@ app.listen(4000, () => {
     console.log("The server started on port 4000");
 });
 
-// console.log('email RESTful API server started on: ' + port);
+const storage = multer.diskStorage({
+    destination: (req, file, callback) => {
+        callback(null, 'archivos/VIVANZA/email');
+    },
+    filename: (req, file, callback) => {
+        callback(null, file.originalname);
+    }
+});
+
+var upload = multer({storage: storage});
 
 const sendMail = (emailInfo, callback) => {
     const transporter = nodemailer.createTransport({
@@ -36,6 +47,8 @@ const sendMail = (emailInfo, callback) => {
     transporter.sendMail(emailOptions, callback);
 }
 
+var emailAttachments = [];
+
 app.post('/api/EnviarEmail', (req, res) => {
 
     var params = req.body;
@@ -44,7 +57,7 @@ app.post('/api/EnviarEmail', (req, res) => {
         to: params.emailTo,
         subject: params.emailSubject,
         html: params.emailHtml,
-        attachments: params.emailAttachments
+        attachments: emailAttachments
     }
 
     console.log("request came");
@@ -52,11 +65,30 @@ app.post('/api/EnviarEmail', (req, res) => {
     sendMail(emailInfo, (err, info) => {
         if (err) {
             console.log(err);
-            res.status(400);
-            res.send({ error: "Failed to send email" });
+            res.send({status: false});
+            emailAttachments = [];
         } else {
-            console.log("Email has been sent");
-            res.send(info);
+            res.send({status: true});
+            emailAttachments = [];
         }
     });
+})
+
+app.post('/api/SubeArchivos', upload.array('files'), (req, res) => {
+    const files = req.files;
+    console.log(files);
+    if (files) {
+        for (const file of files) {
+            var attachment = {
+                filename: file.originalname,
+                path: __dirname + "/" + file.destination + '/' + file.originalname
+            }
+            emailAttachments.push(attachment);
+        }
+        res.send({status: true});
+    }
+    else{
+        const error = new Error('Debe de subir una imagen');
+        return next({status: false});
+    }
 })

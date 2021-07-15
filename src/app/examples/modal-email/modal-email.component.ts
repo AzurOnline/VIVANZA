@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal, NgbModal, NgbModalOptions, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { fi } from 'date-fns/locale';
 import { EmailService } from 'src/app/services/email.service';
 
 @Component({
@@ -12,15 +13,13 @@ export class ModalEmailComponent implements OnInit {
 
   @Input() my_modal_title;
   @Input() my_modal_color;
-  private file:any;
-  private filename;
-  private filebuffer;
+  private files;
 
   constructor(
     public activeModal: NgbActiveModal,
     public formBuilder: FormBuilder,
     private emailService: EmailService,
-  ) {  }
+  ) { }
 
   emailForm = this.formBuilder.group({
     emailTo: ['', Validators.required],
@@ -32,53 +31,68 @@ export class ModalEmailComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  fileChange(e){
-    this.file = e.target.files[0];
-    let fileReader = new FileReader();
-
-    fileReader.onload = (e) => {
-
-      this.filename = this.file.name;
-      this.filebuffer = Buffer.from(this.file);
+  fileChange(e) {
+    if (e.target.files.length > 0) {
+      const files = e.target.files;
+      this.files = files;
     }
-    fileReader.readAsArrayBuffer(this.file);
   }
 
   EnviarEmail() {
 
-    // this.files.forEach(element => {
-    //   fileReader.onload = (e) => {
-    //     var path = fileReader.result;
-    //     var file = {
-    //       filename: element.name,
-    //       path: path
-    //     }
-    //     attachments.push(file)
-    //   }
-    //   fileReader.readAsDataURL(element);
-    // });
 
-    // var fileSelect = document.getElementById('emailAttachment');
-    // var files = fileSelect;
+    if (this.files.length > 0) {
+      const formData = new FormData();
 
-    // var attachments = [
-    //   {
-    //     filename: this.emailForm.value.emailAttachment.replace(/^.*[\\\/]/, ''),
-    //     path: this.emailForm.value.emailAttachment
-    //   }
-    // ]
+      for (const file of this.files) {
+        formData.append('files', file);
+      }
 
-    let data = {
-      emailTo: this.emailForm.value.emailTo,
-      emailSubject: this.emailForm.value.emailSubject,
-      emailHtml: this.emailForm.value.emailText,
-      emailAttachments: this.attachments
+      this.emailService.SubeArchivos(formData).subscribe((response) => {
+        let _responseArchivo;
+        _responseArchivo = response;
+
+        if (_responseArchivo.status) {
+          let data = {
+            emailTo: this.emailForm.value.emailTo,
+            emailSubject: this.emailForm.value.emailSubject,
+            emailHtml: this.emailForm.value.emailText,
+          }
+
+          this.emailService.EnviaEmail(data).subscribe((response) => {
+            let _responseEmail;
+            _responseEmail = response;
+
+            if (_responseEmail.status) {
+              alert('Correo enviado exitosamente');
+              this.activeModal.close();
+            } else {
+              alert('Ocurrio un error al enviar su correo');
+            }
+          });
+        } else {
+          alert('Ocurrio un error con el archivo subido y su correo no fue enviado');
+        }
+
+      });
+    } else {
+
+      let data = {
+        emailTo: this.emailForm.value.emailTo,
+        emailSubject: this.emailForm.value.emailSubject,
+        emailHtml: this.emailForm.value.emailText,
+      }
+
+      this.emailService.EnviaEmail(data).subscribe((response) => {
+        let _responseEmail;
+        _responseEmail = response;
+
+        if (_responseEmail.status) {
+          alert('Correo enviado exitosamente');
+        } else {
+          alert('Ocurrio un error al enviar su correo');
+        }
+      });
     }
-
-    this.emailService.EnviaEmail(data).subscribe((response) => {
-      let _response;
-      _response = response;
-      // let resultado = _response.success.recordset[0];
-    });
   }
 }

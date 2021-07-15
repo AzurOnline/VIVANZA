@@ -24,5 +24,9 @@ export class EmailService {
     return this.http.post(this.serviceUrl + 'EnviarEmail/', data);
   }
 
+  public SubeArchivos(formData:FormData) {
+    return this.http.post(this.serviceUrl + 'SubeArchivos/', formData);
+  }
+
 
 }
