@@ -1,3 +1,4 @@
+// import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
 import { CalendarComponent } from './examples/calendar/calendar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -41,6 +42,8 @@ import { ConfidePmComponent } from './ruteador/confide-pm/confide-pm.component';
 import { ContratoIndePfComponent } from './ruteador/contrato-inde-pf/contrato-inde-pf.component';
 import { ContratoIndePmComponent } from './ruteador/contrato-inde-pm/contrato-inde-pm.component';
 import { ContratoPfComponent } from './ruteador/contrato-pf/contrato-pf.component';
+import { ContratoApruebaPf30Component } from './ruteador/contrato-aprueba-pf30/contrato-aprueba-pf30.component';
+import { ContratoApruebaPm30Component } from './ruteador/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: "full" },
@@ -83,8 +86,11 @@ const routes: Routes = [
   { path: 'contratoindepf', component:ContratoIndePfComponent,pathMatch:"full"},
   { path: 'contratoindepm', component:ContratoIndePmComponent,pathMatch:"full"},
   { path: 'contratopf', component:ContratoPfComponent,pathMatch:"full"},
-  { path: 'contratoPM', component:ContratoPmComponent,pathMatch:"full"}
-  
+  { path: 'contratoPM', component:ContratoPmComponent,pathMatch:"full"},
+  { path: 'contratoApruebaPf30', component:ContratoApruebaPf30Component,pathMatch:"full"},
+  { path: 'contratoApruebaPm30', component:ContratoApruebaPm30Component,pathMatch:"full"},
+  // { path: 'dashboardadmin', component: DashboardAdminComponent, pathMatch: "full" }
+
 
 ]
 
