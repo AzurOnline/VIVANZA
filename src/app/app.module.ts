@@ -86,6 +86,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { UploadFilesComponent } from './examples/upload-files/upload-files.component';
 import { ContratoApruebaPf30Component } from './ruteador/contrato-aprueba-pf30/contrato-aprueba-pf30.component';
 import { ContratoApruebaPm30Component } from './ruteador/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
+import { ContratoTiempoDeterminadoPfComponent } from './ruteador/contrato-tiempo-determinado-pf/contrato-tiempo-determinado-pf.component';
+import { ContratoTiempoDeterminadoPmComponent } from './ruteador/contrato-tiempo-determinado-pm/contrato-tiempo-determinado-pm.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -152,7 +154,9 @@ registerLocaleData(localeEs);
     // DashboardAdminComponent,
     // UploadFilesComponent,
     ContratoApruebaPf30Component,
-    ContratoApruebaPm30Component
+    ContratoApruebaPm30Component,
+    ContratoTiempoDeterminadoPfComponent,
+    ContratoTiempoDeterminadoPmComponent
 
   ],
   imports: [
