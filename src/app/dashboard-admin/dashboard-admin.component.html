@@ -1,0 +1,50 @@
+<div class="content-wrapper" style="min-height: 1365.62px;">
+  <div class="grid-container">
+    <h1 class="mat-h1">Dashboard Admin</h1>
+    <mat-grid-list cols="2" rowHeight="350px">
+      <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              {{card.title}}
+              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item>Expandir</button>
+                <button mat-menu-item>Quitar</button>
+              </mat-menu>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <!--Clientes Potenciales por Asesor-->
+            <ng-container *ngIf="card.cardNo == 1">
+
+            </ng-container>
+            <!--Vistas por Canal-->
+            <ng-container *ngIf="card.cardNo == 2">
+              {{card.title}}
+            </ng-container>
+            <!--Visitas por Nivel de Interes-->
+            <ng-container *ngIf="card.cardNo == 3">
+              {{card.title}}
+            </ng-container>
+            <!--Apartados-->
+            <ng-container *ngIf="card.cardNo == 4">
+              {{card.title}}
+            </ng-container>
+            <!--Ventas-->
+            <ng-container *ngIf="card.cardNo == 5">
+              {{card.title}}
+            </ng-container>
+            <!--Cancelaciones-->
+            <ng-container *ngIf="card.cardNo == 6">
+              {{card.title}}
+            </ng-container>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+</div>

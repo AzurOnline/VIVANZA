@@ -76,14 +76,14 @@ import { ConfidePmComponent } from './ruteador/confide-pm/confide-pm.component';
 import { ConfidePfComponent } from './ruteador/confide-pf/confide-pf.component';
 import { ModalEventosComponent } from './examples/calendar/modal-eventos/modal-eventos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
-// import { MatGridListModule } from '@angular/material/grid-list';
-// import { MatCardModule } from '@angular/material/card';
-// import { MatMenuModule } from '@angular/material/menu';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatButtonModule } from '@angular/material/button';
-// import { LayoutModule } from '@angular/cdk/layout';
-// import { UploadFilesComponent } from './examples/upload-files/upload-files.component';
+import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { LayoutModule } from '@angular/cdk/layout';
+import { UploadFilesComponent } from './examples/upload-files/upload-files.component';
 import { ContratoApruebaPf30Component } from './ruteador/contrato-aprueba-pf30/contrato-aprueba-pf30.component';
 import { ContratoApruebaPm30Component } from './ruteador/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
 import { ContratoTiempoDeterminadoPfComponent } from './ruteador/contrato-tiempo-determinado-pf/contrato-tiempo-determinado-pf.component';
@@ -151,7 +151,7 @@ registerLocaleData(localeEs);
     ConfidePfComponent,
     ModalEventosComponent,
     ModalEmailComponent,
-    // DashboardAdminComponent,
+    DashboardAdminComponent,
     // UploadFilesComponent,
     ContratoApruebaPf30Component,
     ContratoApruebaPm30Component,
@@ -167,18 +167,18 @@ registerLocaleData(localeEs);
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    // FullCalendarModule,
+    FullCalendarModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     FullCalendarModule,
     NgxMaterialTimepickerModule.setLocale('es-MX'),
     BrowserAnimationsModule,
-    // MatGridListModule,
-    // MatCardModule,
-    // MatMenuModule,
-    // MatIconModule,
-    // MatButtonModule,
-    // LayoutModule
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule
   ],
   entryComponents: [
     ModalComponent,

@@ -1,4 +1,4 @@
-// import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
+import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
 import { CalendarComponent } from './examples/calendar/calendar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -93,7 +93,7 @@ const routes: Routes = [
   { path: 'contrato-a-pruebapm30', component:ContratoApruebaPm30Component,pathMatch:"full"},
   { path: 'contrato-tiempo-determinadopm', component:ContratoTiempoDeterminadoPmComponent,pathMatch:"full"},
   { path: 'contrato-tiempo-determinadopf', component:ContratoTiempoDeterminadoPfComponent,pathMatch:"full"},
-  // { path: 'dashboardadmin', component: DashboardAdminComponent, pathMatch: "full" }
+  { path: 'dashboardadmin', component: DashboardAdminComponent, pathMatch: "full" }
 
 
 ]
