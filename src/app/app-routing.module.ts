@@ -35,17 +35,17 @@ import { CrmeditarmotivoscancelacionComponent } from './crmModule/crmeditarmotiv
 import { DesperfiladosComponent } from './crmModule/desperfilados/desperfilados.component';
 import { AsesoresPromotoresComponent } from './crmModule/asesores-promotores/asesores-promotores.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
-import { ContratoPmComponent } from './ruteador/contrato-pm/contrato-pm.component';
-import { ConfidePfComponent } from './ruteador/confide-pf/confide-pf.component';
-import { ConfidePmComponent } from './ruteador/confide-pm/confide-pm.component';
-import { ContratoIndePfComponent } from './ruteador/contrato-inde-pf/contrato-inde-pf.component';
-import { ContratoIndePmComponent } from './ruteador/contrato-inde-pm/contrato-inde-pm.component';
-import { ContratoPfComponent } from './ruteador/contrato-pf/contrato-pf.component';
-import { ContratoApruebaPf30Component } from './ruteador/contrato-aprueba-pf30/contrato-aprueba-pf30.component';
-import { ContratoApruebaPm30Component } from './ruteador/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
-import { ContratoTiempoDeterminadoPmComponent } from './ruteador/contrato-tiempo-determinado-pm/contrato-tiempo-determinado-pm.component';
-import { ContratoTiempoDeterminadoPfComponent } from './ruteador/contrato-tiempo-determinado-pf/contrato-tiempo-determinado-pf.component';
+import { ContratosMainComponent } from './contratos/contratos-main/contratos-main.component';
+import { ContratoPmComponent } from './contratos/contrato-pm/contrato-pm.component';
+import { ConfidePfComponent } from './contratos/confide-pf/confide-pf.component';
+import { ConfidePmComponent } from './contratos/confide-pm/confide-pm.component';
+import { ContratoIndePfComponent } from './contratos/contrato-inde-pf/contrato-inde-pf.component';
+import { ContratoIndePmComponent } from './contratos/contrato-inde-pm/contrato-inde-pm.component';
+import { ContratoPfComponent } from './contratos/contrato-pf/contrato-pf.component';
+import { ContratoApruebaPf30Component } from './contratos/contrato-aprueba-pf30/contrato-aprueba-pf30.component';
+import { ContratoApruebaPm30Component } from './contratos/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
+import { ContratoTiempoDeterminadoPmComponent } from './contratos/contrato-tiempo-determinado-pm/contrato-tiempo-determinado-pm.component';
+import { ContratoTiempoDeterminadoPfComponent } from './contratos/contrato-tiempo-determinado-pf/contrato-tiempo-determinado-pf.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: "full" },

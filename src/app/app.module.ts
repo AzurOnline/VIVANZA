@@ -67,13 +67,13 @@ import bootstrapPlugin from '@fullcalendar/bootstrap';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { CalendarComponent } from './examples/calendar/calendar.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { ContratosMainComponent } from './ruteador/contratos-main/contratos-main.component';
-import { ContratoPmComponent } from './ruteador/contrato-pm/contrato-pm.component';
-import { ContratoPfComponent } from './ruteador/contrato-pf/contrato-pf.component';
-import { ContratoIndePmComponent } from './ruteador/contrato-inde-pm/contrato-inde-pm.component';
-import { ContratoIndePfComponent } from './ruteador/contrato-inde-pf/contrato-inde-pf.component';
-import { ConfidePmComponent } from './ruteador/confide-pm/confide-pm.component';
-import { ConfidePfComponent } from './ruteador/confide-pf/confide-pf.component';
+import { ContratosMainComponent } from './contratos/contratos-main/contratos-main.component';
+import { ContratoPmComponent } from './contratos/contrato-pm/contrato-pm.component';
+import { ContratoPfComponent } from './contratos/contrato-pf/contrato-pf.component';
+import { ContratoIndePmComponent } from './contratos/contrato-inde-pm/contrato-inde-pm.component';
+import { ContratoIndePfComponent } from './contratos/contrato-inde-pf/contrato-inde-pf.component';
+import { ConfidePmComponent } from './contratos/confide-pm/confide-pm.component';
+import { ConfidePfComponent } from './contratos/confide-pf/confide-pf.component';
 import { ModalEventosComponent } from './examples/calendar/modal-eventos/modal-eventos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
@@ -84,10 +84,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { UploadFilesComponent } from './examples/upload-files/upload-files.component';
-import { ContratoApruebaPf30Component } from './ruteador/contrato-aprueba-pf30/contrato-aprueba-pf30.component';
-import { ContratoApruebaPm30Component } from './ruteador/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
-import { ContratoTiempoDeterminadoPfComponent } from './ruteador/contrato-tiempo-determinado-pf/contrato-tiempo-determinado-pf.component';
-import { ContratoTiempoDeterminadoPmComponent } from './ruteador/contrato-tiempo-determinado-pm/contrato-tiempo-determinado-pm.component';
+import { ContratoApruebaPf30Component } from './contratos/contrato-aprueba-pf30/contrato-aprueba-pf30.component';
+import { ContratoApruebaPm30Component } from './contratos/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
+import { ContratoTiempoDeterminadoPfComponent } from './contratos/contrato-tiempo-determinado-pf/contrato-tiempo-determinado-pf.component';
+import { ContratoTiempoDeterminadoPmComponent } from './contratos/contrato-tiempo-determinado-pm/contrato-tiempo-determinado-pm.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
