@@ -46,6 +46,7 @@ import { ContratoApruebaPf30Component } from './contratos/contrato-aprueba-pf30/
 import { ContratoApruebaPm30Component } from './contratos/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
 import { ContratoTiempoDeterminadoPmComponent } from './contratos/contrato-tiempo-determinado-pm/contrato-tiempo-determinado-pm.component';
 import { ContratoTiempoDeterminadoPfComponent } from './contratos/contrato-tiempo-determinado-pf/contrato-tiempo-determinado-pf.component';
+import { DashboardAsesoresComponent } from './dashboard-asesores/dashboard-asesores.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: "full" },
@@ -93,7 +94,8 @@ const routes: Routes = [
   { path: 'contrato-a-pruebapm30', component:ContratoApruebaPm30Component,pathMatch:"full"},
   { path: 'contrato-tiempo-determinadopm', component:ContratoTiempoDeterminadoPmComponent,pathMatch:"full"},
   { path: 'contrato-tiempo-determinadopf', component:ContratoTiempoDeterminadoPfComponent,pathMatch:"full"},
-  { path: 'dashboardadmin', component: DashboardAdminComponent, pathMatch: "full" }
+  { path: 'dashboardadmin', component: DashboardAdminComponent, pathMatch: "full" },
+  { path: 'dashboardasesores', component: DashboardAsesoresComponent, pathMatch: "full" }
 
 
 ]

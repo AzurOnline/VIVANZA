@@ -88,6 +88,8 @@ import { ContratoApruebaPf30Component } from './contratos/contrato-aprueba-pf30/
 import { ContratoApruebaPm30Component } from './contratos/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
 import { ContratoTiempoDeterminadoPfComponent } from './contratos/contrato-tiempo-determinado-pf/contrato-tiempo-determinado-pf.component';
 import { ContratoTiempoDeterminadoPmComponent } from './contratos/contrato-tiempo-determinado-pm/contrato-tiempo-determinado-pm.component';
+import { DashboardAsesoresComponent } from './dashboard-asesores/dashboard-asesores.component';
+import {DatePipe} from '@angular/common';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -156,7 +158,8 @@ registerLocaleData(localeEs);
     ContratoApruebaPf30Component,
     ContratoApruebaPm30Component,
     ContratoTiempoDeterminadoPfComponent,
-    ContratoTiempoDeterminadoPmComponent
+    ContratoTiempoDeterminadoPmComponent,
+    DashboardAsesoresComponent
 
   ],
   imports: [
@@ -185,7 +188,7 @@ registerLocaleData(localeEs);
     ModalEventosComponent,
     ModalEmailComponent
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

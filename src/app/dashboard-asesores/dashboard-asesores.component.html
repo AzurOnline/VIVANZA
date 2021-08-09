@@ -3,14 +3,14 @@
     <!-- <h1 class="mat-h1">Dashboard Admin</h1> -->
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Dashboard Admin</mat-card-title>
+        <mat-card-title>Dashboard Asesores</mat-card-title>
         <mat-card-subtitle>Filtros</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <div class="row">
           <div class="col-3">
             <label for="">Fecha de inicio</label>
-            <input type="date" [(ngModel)]="fecha_ini" class="form-control" name="fechaIni" id="fechaIni"
+            <input type="date" [(ngModel)]="fecha_ini " class="form-control" name="fechaIni" id="fechaIni"
               aria-describedby="fechaIni" placeholder="Fecha de inico">
           </div>
           <div class="col-3">
@@ -60,31 +60,29 @@
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="dashboard-card-content table-responsive">
-            <!--Clientes Potenciales por Asesor-->
+            <!--Clientes por Asesor-->
             <ng-container *ngIf="card.cardNo == 1">
               <div class="container-fluid">
                 <table *ngIf="tabla_clientes_asesor" id="tabla_clientes_asesor" [dtOptions]="dtOptions" datatable
                   class="row-border hover">
                   <thead>
                     <tr>
-                      <th>Id</th>
-                      <th>Nombre</th>
-                      <th>Tipo Usuario</th>
-                      <th>Max. Clientes Potenciales</th>
-                      <th>Max. Prospectos</th>
-                      <th>Nombre de Desarrollo </th>
-                      <th>Clientes Potenciales Actuales</th>
+                      <th>Cliente</th>
+                      <th>Fecha próximo contacto</th>
+                      <th>Teléfono</th>
+                      <th>Nobre del desarrollo</th>
+                      <th>Etapa</th>
+                      <th>Tipo de cliente</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let item of tabla_clientes_asesor">
-                      <td>{{item.id}}</td>
-                      <td>{{item.nombre}}</td>
-                      <td>{{item.tipo_usuario}}</td>
-                      <td>{{item.max_clientes_potenciales}}</td>
-                      <td>{{item.max_prospectos}}</td>
-                      <td>{{item.nombre_desarrollo}}</td>
-                      <td>{{item.clientes_potenciales_actuales}}</td>
+                      <td><span [ngStyle]="{color:item.color}">{{item.cliente}}</span></td>
+                      <td><span [ngStyle]="{color:item.color}">{{item.fecha_proximo_contacto}}</span></td>
+                      <td><span [ngStyle]="{color:item.color}">{{item.telefono}}</span></td>
+                      <td><span [ngStyle]="{color:item.color}">{{item.nombre_del_desarrollo}}</span></td>
+                      <td><span [ngStyle]="{color:item.color}">{{item.etapa}}</span></td>
+                      <td><span [ngStyle]="{color:item.color}">{{item.tipo_de_cliente}}</span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -102,81 +100,11 @@
                       <div class=""></div>
                     </div>
                   </div>
-                  <canvas id="PieChartCanales" width="100%" height="25%"></canvas>
+                  <!--             <canvas id="myChart"
+                      style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 316px;"
+                      width="316" height="250" class="chartjs-render-monitor"></canvas> -->
+                  <canvas id="barChart" width="100%" height="25%"></canvas>
                 </div>
-              </div>
-            </ng-container>
-            <!--Visitas por Nivel de Interes-->
-            <ng-container *ngIf="card.cardNo == 3">
-              <div class="card-body">
-                <div class="chart">
-                  <div class="chartjs-size-monitor">
-                    <div class="chartjs-size-monitor-expand">
-                      <div class=""></div>
-                    </div>
-                    <div class="chartjs-size-monitor-shrink">
-                      <div class=""></div>
-                    </div>
-                  </div>
-                  <canvas id="PieChartInteres" width="100%" height="25%"></canvas>
-                </div>
-              </div>
-            </ng-container>
-            <!--Apartados-->
-            <ng-container *ngIf="card.cardNo == 4">
-              <div class="container-fluid">
-                <table *ngIf="tabla_apartados" id="tabla_apartados" [dtOptions]="dtOptions" datatable
-                  class="row-border hover">
-                  <thead>
-                    <tr>
-                      <th>Nombre del cliente</th>
-                      <th>Fecha de apartado</th>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let item of tabla_apartados">
-                      <td>{{item.nombre_del_cliente}}</td>
-                      <td>{{item.fecha_apartado}}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </ng-container>
-            <!--Ventas-->
-            <ng-container *ngIf="card.cardNo == 5">
-              <div class="container-fluid">
-                <table *ngIf="tabla_ventas" id="tabla_ventas" [dtOptions]="dtOptions" datatable
-                  class="row-border hover">
-                  <thead>
-                    <tr>
-                      <th>Nombre del cliente</th>
-                      <th>Fecha de venta</th>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let item of tabla_ventas">
-                      <td>{{item.nombre_del_cliente}}</td>
-                      <td>{{item.fecha_venta}}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </ng-container>
-            <!--Cancelaciones-->
-            <ng-container *ngIf="card.cardNo == 6">
-              <div class="container-fluid">
-                <table *ngIf="tabla_cancelados" id="tabla_cancelados" [dtOptions]="dtOptions" datatable
-                  class="row-border hover">
-                  <thead>
-                    <tr>
-                      <th>Nombre del cliente</th>
-                      <th>Fecha de cancelación</th>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let item of tabla_cancelados">
-                      <td>{{item.nombre_del_cliente}}</td>
-                      <td>{{item.fecha_cancelacion}}</td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </ng-container>
           </mat-card-content>
