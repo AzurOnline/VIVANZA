@@ -12,7 +12,7 @@ import htmlToPdfmake from 'html-to-pdfmake';
   styleUrls: ['./confide-pf.component.css']
 })
 export class ConfidePfComponent implements OnInit {
-  @ViewChild('printcontainer') printableElement: ElementRef; 
+  @ViewChild('printcontainer') printableElement: ElementRef;
 
   constructor(public exportService: ExportService) { }
 
@@ -20,17 +20,33 @@ export class ConfidePfComponent implements OnInit {
   }
 
   public exportarPdf() {
-    
-    const doc = new jsPDF();
-   
+
+    pdfMake.fonts = {
+      CenturyGothic: {
+        normal: '07558_CenturyGothic.ttf',
+        bold: '07553_CenturyGothicBold.ttf',
+        italics: '07556_CenturyGothicItalic.ttf',
+        bolditalics: '07724_CGOTHICBI.ttf'
+      }
+    }
+
     const printableElement = this.printableElement.nativeElement;
-   
+
     var html = htmlToPdfmake(printableElement.innerHTML);
-     
-    const documentDefinition = { content: html  };
-    pdfMake.createPdf(documentDefinition).open(); 
+
+    const documentDefinition = {
+      content: html,
+      pageSize: 'LEGAL',
+      defaultStyle: {
+        font: 'CenturyGothic'
+      }
+    };
+
+
+
+    pdfMake.createPdf(documentDefinition).open();
 
   }
-  
+
 
 }

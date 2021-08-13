@@ -83,7 +83,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
-import { UploadFilesComponent } from './examples/upload-files/upload-files.component';
+// import { UploadFilesComponent } from './examples/upload-files/upload-files.component';
 import { ContratoApruebaPf30Component } from './contratos/contrato-aprueba-pf30/contrato-aprueba-pf30.component';
 import { ContratoApruebaPm30Component } from './contratos/contrato-aprueba-pm30/contrato-aprueba-pm30.component';
 import { ContratoTiempoDeterminadoPfComponent } from './contratos/contrato-tiempo-determinado-pf/contrato-tiempo-determinado-pf.component';

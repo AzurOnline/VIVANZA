@@ -1,343 +1,383 @@
+<div class="content-wrapper">
+  <button (click)="exportarPdf()" class="btn btn-primary">Exportar</button>
+  <div #printcontainer id="printcontainer" style="margin:3em;">
+    <div class="container">
+      <div class="card">
+        <div class="container fluid" style="margin-left: 5px;margin-right: 5px;">
+          <div>
+            <div>
+              <br>
+              <h5 style='text-align:center'><b><u> CONTRATO DE CONFIDENCIALIDAD Y PROTECCIÓN DE DATOS PERSONALES </u>
+                </b> </h5>
+              <br>
+              <div>
+                <p>
+                  CONTRATO DE CONFIDENCIALIDAD QUE CELEBRAN POR UNA PARTE LA C.
+                  XXXXXXXXXXXXXXXX A QUIEN EN LO SUCESIVO SE LE DENOMINARÁ “EL TITULAR”, Y
+                  POR LA OTRA LA C. XXXXXXXXXXXXXX, EN ADELANTE DENOMINADO “EL
+                  RECEPTOR” AL TENOR DE LAS SIGUIENTES DECLARACIONES Y CLÁUSULAS:
+                </p>
+              </div>
+              <br>
+              <h5 style='text-align:center'><b><u> DECLARACIONES </u></b></h5>
+              <br>
+              <h5>I. - Declara “EL TITULAR”:</h5>
+              <p><b>a&#41;</b> Que es una persona física constituida de conformidad con las leyes
+                mexicanas y que entre sus actividades se encuentra el de brindar servicios
+                xxxxxxxxxxxxxxxxxxxx; y en razón de lo anterior se encuentra en posibilidad de celebrar
+                el presente contrato.</p>
+              <br>
+              <p><b>b&#41;</b> Que cuenta con Registro Federal de Contribuyentes ante el Servicio de
+                Administración Tributaria ___________________________________________.</p>
+              <br>
+              <p><b>c&#41;</b> Que desea contratar los servicios de “EL RECEPTOR”, a fin de que le
+                otorgue los servicios de ___________________________________________.</p>
+              <br>
+              <p><b>d&#41;</b> Que, con motivo del contrato referido anteriormente, "EL TITULAR" dispone
+                y utiliza "INFORMACIÓN CONFIDENCIAL" y “DATOS PERSONALES DE PERSONAS FISICAS O MORALES”
+                relativas a “EL NEGOCIO”. Dicha "INFORMACIÓN CONFIDENCIAL" para efecto de este
+                contrato es definida como cualquier secreto, información técnica, idea de negocio
+                o información que le signifique obtener o mantener una ventaja competitiva o económica
+                frente a terceros en la realización de actividades económicas y respecto de la cual ha
+                preservado su confidencialidad y el acceso restringido a la misma, que de una manera
+                enunciativa más no limitativa comprende:
+              </p>
+              <br>
+              <p>
+                I. La posibilidad de llevar a cabo “EL NEGOCIO” y de lucrar económicamente con ello.
+              </p>
+              <p>
+                II. Información incorporada en software de computadoras o incluida en medios de
+                almacenamiento electrónico, así como información contenida en documentos, medios
+                magnéticos, discos ópticos, microfilmes, películas u otros medios similares.
+              </p>
+              <p>
+                III. Información revelada en forma oral o escrita, relativa a la actividad
+                de "EL TITULAR" en relación con los estudios de factibilidad técnica, económica,
+                comercial, jurídica y fiscal, entre otras, de llevar a cabo "EL NEGOCIO", así
+                como "EL NEGOCIO" mismo y negociaciones que se relacionen con este.
+              </p>
+              <p>
+                IV. Toda información, trabajos, informes, programas, estudios, procesos entre
+                otros, que genere "EL RECEPTOR" con motivo de los trabajos de “EL NEGOCIO”
+                que realice en favor de "EL TITULAR" relacionada con la factibilidad técnica,
+                económica, comercial, jurídica y fiscal, entre otras, de llevar a cabo "EL NEGOCIO",
+                así como "EL NEGOCIO" mismo y negociaciones que se relacionen con éste. Las partes
+                convienen que toda la información referida en este inciso es propiedad de "EL TITULAR".
+              </p>
+              <p><b>e&#41;</b> Que con motivo de "EL NEGOCIO", "EL TITULAR" y "EL RECEPTOR" convinieron que éste
+                último realice trabajos para desarrollar “EL NEGOCIO” del presente contrato, por
+                lo que "EL TITULAR" se verá en la necesidad de transmitirle "INFORMACIÓN CONFIDENCIAL"
+                a "EL RECEPTOR", en forma regular, a efecto de que éste la aplique o utilice
+                exclusivamente para el desarrollo de sus trabajos encomendados.
+              </p>
+              <br>
+              <h5><b>II. - Declara "EL RECEPTOR":</b></h5>
+              <br>
+              <p><b>a&#41;</b> Ser una persona con capacidad legal para celebrar el presente contrato.</p>
+              <p><b>b&#41;</b> Que se obliga a respetar las disposiciones del presente contrato de confidencialidad.
+              </p>
+              <br>
+              <h5><b>III. - Declaran ambas partes:</b></h5>
+              <br>
+              <p><b>a&#41;</b> Que se reconocen mutua y recíprocamente la personalidad y las facultades con que se
+                ostentan
+                y comparecen a la celebración del presente contrato.</p>
+              <p><b>b&#41;</b> Que comparecen en forma libre y voluntaria a la celebración del presente contrato,
+                el cual sujetan al tenor de las siguientes: </p>
+              <br>
+              <h5 style='text-align:center'><b><u> CLÁUSULAS </u></b></h5>
+              <br>
+              <p>
+                <b>PRIMERA. -</b> "EL TITULAR”, cuando sea necesario, proporcionará a "EL RECEPTOR" la "INFORMACIÓN
+                CONFIDENCIAL"
+                que requiera para que la considere al desempeñar sus trabajos encomendados, en favor de "EL TITULAR"
+                relacionados con la factibilidad técnica, económica, comercial, jurídica y fiscal, entre otras, de
+                llevar a cabo "EL NEGOCIO" así como sobre "EL NEGOCIO" mismo.
+              </p>
 
-<div class="content-wrapper" >
-    <button (click)="exportarPdf()" class="btn btn-primary">Exportar</button>
-          <div #printcontainer id="printcontainer" style="margin:3em;">
-<div class="container" >
-  <div class="card" >  
-    <div class="container fluid" style="margin-left: 5px;margin-right: 5px;">
-  <div >
-    <div>
-      <br>
-      <h5 style='text-align:center'><b><u> CONTRATO DE CONFIDENCIALIDAD Y PROTECCIÓN DE DATOS PERSONALES </u> </b> </h5>
-      <br>
-      <div >
-        CONTRATO DE CONFIDENCIALIDAD QUE CELEBRAN POR UNA PARTE LA C. 
-        XXXXXXXXXXXXXXXX A QUIEN EN LO SUCESIVO SE LE DENOMINARÁ “EL TITULAR”, Y 
-        POR LA OTRA LA C. XXXXXXXXXXXXXX, EN ADELANTE DENOMINADO “EL 
-        RECEPTOR” AL TENOR DE LAS SIGUIENTES DECLARACIONES Y CLÁUSULAS:
-      </div>
-      <br>
-      <h5 style='text-align:center'><b><u> DECLARACIONES </u></b></h5>
-      <br>
-      <h5>I. - Declara “EL TITULAR”:</h5>
-       <p><b>a&#41;</b> Que es una persona física constituida de conformidad con las leyes
-         mexicanas y que entre sus actividades se encuentra el de brindar servicios
-          xxxxxxxxxxxxxxxxxxxx; y en razón de lo anterior se encuentra en posibilidad de celebrar 
-          el presente contrato.</p>
-          <br>
-          <p><b>b&#41;</b> Que cuenta con Registro Federal de Contribuyentes ante el Servicio de 
-            Administración Tributaria ___________________________________________.</p>
-          <br>
-          <p><b>c&#41;</b> Que desea contratar los servicios de “EL RECEPTOR”, a fin de que le 
-            otorgue los servicios de ___________________________________________.</p>
-          <br>
-          <p><b>d&#41;</b> Que, con motivo del contrato referido anteriormente, "EL TITULAR" dispone 
-            y utiliza "INFORMACIÓN CONFIDENCIAL" y “DATOS PERSONALES DE PERSONAS FISICAS O MORALES”
-             relativas a “EL NEGOCIO”. Dicha "INFORMACIÓN CONFIDENCIAL" para efecto de este 
-             contrato es definida como cualquier secreto, información técnica, idea de negocio
-              o información que le signifique obtener o mantener una ventaja competitiva o económica 
-              frente a terceros en la realización de actividades económicas y respecto de la cual ha
-               preservado su confidencialidad y el acceso restringido a la misma, que de una manera 
-               enunciativa más no limitativa comprende: 
-            </p>
-          <br>
-          <p>
-            I. La posibilidad de llevar a cabo “EL NEGOCIO” y de lucrar económicamente con ello.
-          </p>
-          <p>
-            II. Información incorporada en software de computadoras o incluida en medios de 
-            almacenamiento electrónico, así como información contenida en documentos, medios
-             magnéticos, discos ópticos, microfilmes, películas u otros medios similares. 
-          </p>
-          <p>
-            III. Información revelada en forma oral o escrita, relativa a la actividad 
-            de "EL TITULAR" en relación con los estudios de factibilidad técnica, económica, 
-            comercial, jurídica y fiscal, entre otras, de llevar a cabo "EL NEGOCIO", así 
-            como "EL NEGOCIO" mismo y negociaciones que se relacionen con este. 
-          </p>
-          <p>
-            IV. Toda información, trabajos, informes, programas, estudios, procesos entre
-             otros, que genere "EL RECEPTOR" con motivo de los trabajos de “EL NEGOCIO” 
-             que realice en favor de "EL TITULAR" relacionada con la factibilidad técnica, 
-             económica, comercial, jurídica y fiscal, entre otras, de llevar a cabo "EL NEGOCIO",
-              así como "EL NEGOCIO" mismo y negociaciones que se relacionen con éste. Las partes
-            convienen que toda la información referida en este inciso es propiedad de "EL TITULAR". 
-            </p>
-            <p><b>e&#41;</b>  Que con motivo de "EL NEGOCIO", "EL TITULAR" y "EL RECEPTOR" convinieron que éste 
-              último realice trabajos para desarrollar “EL NEGOCIO” del presente contrato, por 
-              lo que "EL TITULAR" se verá en la necesidad de transmitirle "INFORMACIÓN CONFIDENCIAL"
-               a "EL RECEPTOR", en forma regular, a efecto de que éste la aplique o utilice 
-               exclusivamente para el desarrollo de sus trabajos encomendados.
-          </p>
-          <br>
-          <h5><b>II. - Declara "EL RECEPTOR":</b></h5>
-          <br>
-          <p><b>a&#41;</b>	Ser una persona con capacidad legal para celebrar el presente contrato.</p>
-          <p><b>b&#41;</b>	Que se obliga a respetar las disposiciones del presente contrato de confidencialidad. </p>
-          <br>
-          <h5><b>III. - Declaran ambas partes:</b></h5>
-          <br>
-          <p><b>a&#41;</b>	Que se reconocen mutua y recíprocamente la personalidad y las facultades con que se ostentan 
-            y comparecen a la celebración del presente contrato.</p>
-          <p><b>b&#41;</b>	Que comparecen en forma libre y voluntaria a la celebración del presente contrato,
-             el cual sujetan al tenor de las siguientes: </p>
-             <br> 
-          <h5 style='text-align:center'><b><u> CLÁUSULAS </u></b></h5>
-          <br>
-          <p>
-            <b>PRIMERA. -</b> "EL TITULAR”, cuando sea necesario, proporcionará a "EL RECEPTOR" la "INFORMACIÓN CONFIDENCIAL"
-             que requiera para que la considere al desempeñar sus trabajos encomendados, en favor de "EL TITULAR" 
-             relacionados con la factibilidad técnica, económica, comercial, jurídica y fiscal, entre otras, de 
-             llevar a cabo "EL NEGOCIO" así como sobre "EL NEGOCIO" mismo.
-          </p>
-
-          <p>
-            "EL RECEPTOR" a partir de la fecha de celebración del presente contrato, se obliga a no enajenar, arrendar, 
-            prestar, grabar, negociar, revelar, publicar, enseñar, dar a conocer, transmitir o de alguna otra forma 
-            divulgar o proporcionar a cualquier persona física o moral, nacional o extranjera, pública o privada, 
-            la "INFORMACIÓN CONFIDENCIAL"; esto incluye el uso de cualquier medio, aun cuando se trate de incluirla 
-            o entregarla en otros documentos como estudios, reportes, propuestas u ofertas; esto incluye el todo y 
-            el parte de la misma "INFORMACIÓN CONFIDENCIAL", y por ningún motivo se dará a terceras personas físicas
-             o morales, nacionales o extranjeras, públicas o privadas, presentes o futuras, que no hayan sido autorizadas
-              previamente y por escrito por "EL TITULAR" conforme a lo previsto en la cláusula segunda.
-          </p>
-          <p>
-              De igual forma "EL RECEPTOR", a partir de la fecha de celebración del presente contrato, se obliga a no 
-              enajenarla, arrendarla, prestarla, grabarla, negociarla, revelarla, publicarla, enseñarla, darla a conocer,
-               transmitirla o de alguna otra forma divulgarla o proporcionarla por cualquier medio, aun cuando se trate de 
-               incluirla o entregarla en otros documentos como estudios, reportes, propuestas u ofertas, ni en todo ni en 
-               parte, por ningún motivo a sociedades de las cuales "EL RECEPTOR" sea accionista, asesor, causahabiente,
-                apoderado, consejero, comisario, tenedor de acciones y, en general, tenga alguna relación de índole 
+              <p>
+                "EL RECEPTOR" a partir de la fecha de celebración del presente contrato, se obliga a no enajenar,
+                arrendar,
+                prestar, grabar, negociar, revelar, publicar, enseñar, dar a conocer, transmitir o de alguna otra forma
+                divulgar o proporcionar a cualquier persona física o moral, nacional o extranjera, pública o privada,
+                la "INFORMACIÓN CONFIDENCIAL"; esto incluye el uso de cualquier medio, aun cuando se trate de incluirla
+                o entregarla en otros documentos como estudios, reportes, propuestas u ofertas; esto incluye el todo y
+                el parte de la misma "INFORMACIÓN CONFIDENCIAL", y por ningún motivo se dará a terceras personas físicas
+                o morales, nacionales o extranjeras, públicas o privadas, presentes o futuras, que no hayan sido
+                autorizadas
+                previamente y por escrito por "EL TITULAR" conforme a lo previsto en la cláusula segunda.
+              </p>
+              <p>
+                De igual forma "EL RECEPTOR", a partir de la fecha de celebración del presente contrato, se obliga a no
+                enajenarla, arrendarla, prestarla, grabarla, negociarla, revelarla, publicarla, enseñarla, darla a
+                conocer,
+                transmitirla o de alguna otra forma divulgarla o proporcionarla por cualquier medio, aun cuando se trate
+                de
+                incluirla o entregarla en otros documentos como estudios, reportes, propuestas u ofertas, ni en todo ni
+                en
+                parte, por ningún motivo a sociedades de las cuales "EL RECEPTOR" sea accionista, asesor, causahabiente,
+                apoderado, consejero, comisario, tenedor de acciones y, en general, tenga alguna relación de índole
                 cualquiera por sí o por terceras personas.
-          </p>
-          <p>
-              Asimismo, "EL RECEPTOR" conviene expresamente en que no podrá aprovechar o utilizar, en ningún caso, 
-              la "INFORMACIÓN CONFIDENCIAL" para sí o para fines propios. "EL RECEPTOR" asume la obligación de no
-               revelar la "INFORMACIÓN CONFIDENCIAL" por un lapso de cinco años contados a partir de la fecha de
+              </p>
+              <p>
+                Asimismo, "EL RECEPTOR" conviene expresamente en que no podrá aprovechar o utilizar, en ningún caso,
+                la "INFORMACIÓN CONFIDENCIAL" para sí o para fines propios. "EL RECEPTOR" asume la obligación de no
+                revelar la "INFORMACIÓN CONFIDENCIAL" por un lapso de cinco años contados a partir de la fecha de
                 firma del presente contrato.
-          </p>
-          <p>
-              La obligación de no enajenar, arrendar, prestar, gravar, negociar, revelar, publicar, enseñar,
-               dar a conocer, transmitir o de alguna otra forma divulgar o proporcionar a cualquier persona 
-               física o moral, nacional o extranjera, pública o privada, presente o futura, por cualquier 
-               medio, incluyendo los indicados en el párrafo segundo de esta cláusula primera, 
-               la "INFORMACIÓN CONFIDENCIAL" prevista en este contrato se extiende a sus socios, 
-               consejeros, representantes legales, directivos, gerentes, asesores, dependientes y
-                demás personas físicas o morales que guarden relación con "EL RECEPTOR", por lo 
+              </p>
+              <p>
+                La obligación de no enajenar, arrendar, prestar, gravar, negociar, revelar, publicar, enseñar,
+                dar a conocer, transmitir o de alguna otra forma divulgar o proporcionar a cualquier persona
+                física o moral, nacional o extranjera, pública o privada, presente o futura, por cualquier
+                medio, incluyendo los indicados en el párrafo segundo de esta cláusula primera,
+                la "INFORMACIÓN CONFIDENCIAL" prevista en este contrato se extiende a sus socios,
+                consejeros, representantes legales, directivos, gerentes, asesores, dependientes y
+                demás personas físicas o morales que guarden relación con "EL RECEPTOR", por lo
                 que éste último se obliga a comprometer a las personas referidas en este párrafo
-                 al cumplimiento de este contrato y, de igual forma, a no referirse a la
-                  "INFORMACIÓN CONFIDENCIAL" en público ni en privado, independientemente 
-                  de los fines de la exposición, ya sea cátedra, conferencia o cualquier
-                   otro medio, sin importar si dichas cátedras o conferencias o demás medios son o no pagados.
-          </p>
-          <p>
-              En virtud de lo anterior, queda entendido que "EL RECEPTOR" debe asegurarse que cada receptor 
-              de información mencionados en el párrafo que antecede se adhiera al compromiso de confidencialidad 
-              previsto en este contrato.
-          </p>
-          <p>
-              Las partes contratantes reconocen y convienen que toda la información relacionada con la
-               “INFORMACIÓN CONFIDENCIAL” de las Declaraciones de "EL TITULAR" es en todo tiempo propiedad
+                al cumplimiento de este contrato y, de igual forma, a no referirse a la
+                "INFORMACIÓN CONFIDENCIAL" en público ni en privado, independientemente
+                de los fines de la exposición, ya sea cátedra, conferencia o cualquier
+                otro medio, sin importar si dichas cátedras o conferencias o demás medios son o no pagados.
+              </p>
+              <p>
+                En virtud de lo anterior, queda entendido que "EL RECEPTOR" debe asegurarse que cada receptor
+                de información mencionados en el párrafo que antecede se adhiera al compromiso de confidencialidad
+                previsto en este contrato.
+              </p>
+              <p>
+                Las partes contratantes reconocen y convienen que toda la información relacionada con la
+                “INFORMACIÓN CONFIDENCIAL” de las Declaraciones de "EL TITULAR" es en todo tiempo propiedad
                 de "EL TITULAR" por lo que "EL RECEPTOR" acuerda observar en este sentido lo dispuesto en
-                 el párrafo que antecede y en general lo convenido en este instrumento.
-          </p>
-          <p>
-              "EL TITULAR" podrá reclamar o solicitar se le devuelva la "INFORMACIÓN CONFIDENCIAL" en cualquier
-               tiempo mediante comunicación que haga a "EL RECEPTOR". 
-          </p>
-          <p>
-              "EL RECEPTOR" deberá devolver, dentro de los 15 días siguientes a la fecha en que reciba el comunicado,
-               los originales, copias y reproducciones de la "INFORMACIÓN CONFIDENCIAL" que tenga en su posesión, 
-               así como la que esté en posesión de personas a las cuales la "INFORMACIÓN CONFIDENCIAL" les haya sido divulgada.
-          </p>
-          <p>
-              <b>SEGUNDA. -</b> "EL TITULAR" debe autorizar por escrito y previamente a "EL RECEPTOR", en caso de que sea deseo de
-               "EL TITULAR" o necesidad de "EL RECEPTOR", divulgar todo o parte de la “INFORMACIÓN CONFIDENCIAL” a un tercero. 
-              "EL TITULAR" podrá negar la referida autorización sin expresar causa alguna.
-          </p>
-          <p>
-              Si "EL TITULAR" otorga la autorización escrita, firmará con el tercero para tal efecto un contrato de confidencialidad
-               previamente a que "EL RECEPTOR" le proporcione todo o en parte cualquier "INFORMACIÓN CONFIDENCIAL" al tercero, para 
-               lo cual "EL RECEPTOR" deberá cerciorarse antes de divulgar la "INFORMACIÓN CONFIDENCIAL" si efectivamente "EL TITULAR"
+                el párrafo que antecede y en general lo convenido en este instrumento.
+              </p>
+              <p>
+                "EL TITULAR" podrá reclamar o solicitar se le devuelva la "INFORMACIÓN CONFIDENCIAL" en cualquier
+                tiempo mediante comunicación que haga a "EL RECEPTOR".
+              </p>
+              <p>
+                "EL RECEPTOR" deberá devolver, dentro de los 15 días siguientes a la fecha en que reciba el comunicado,
+                los originales, copias y reproducciones de la "INFORMACIÓN CONFIDENCIAL" que tenga en su posesión,
+                así como la que esté en posesión de personas a las cuales la "INFORMACIÓN CONFIDENCIAL" les haya sido
+                divulgada.
+              </p>
+              <p>
+                <b>SEGUNDA. -</b> "EL TITULAR" debe autorizar por escrito y previamente a "EL RECEPTOR", en caso de que
+                sea deseo de
+                "EL TITULAR" o necesidad de "EL RECEPTOR", divulgar todo o parte de la “INFORMACIÓN CONFIDENCIAL” a un
+                tercero.
+                "EL TITULAR" podrá negar la referida autorización sin expresar causa alguna.
+              </p>
+              <p>
+                Si "EL TITULAR" otorga la autorización escrita, firmará con el tercero para tal efecto un contrato de
+                confidencialidad
+                previamente a que "EL RECEPTOR" le proporcione todo o en parte cualquier "INFORMACIÓN CONFIDENCIAL" al
+                tercero, para
+                lo cual "EL RECEPTOR" deberá cerciorarse antes de divulgar la "INFORMACIÓN CONFIDENCIAL" si
+                efectivamente "EL TITULAR"
                 y el tercero firmaron el correspondiente contrato de confidencialidad.
-          </p>
-          <p>
-              <b>TERCERA. -</b> En caso de que "EL RECEPTOR" incumpla con las obligaciones a su cargo, previstas en este instrumento,
-               pagará a "EL TITULAR" una indemnización correspondiente a los daños y perjuicios que por este concepto se generasen; 
-               <b>además de las sanciones e indemnizaciones establecidas en el artículo 210 y 211 del Código Penal Federal.</b>
-          </p>
-          <p>
-              <b>CUARTA. -</b> La vigencia del presente contrato será de <b>cinco años</b> contados a partir de la fecha de firma del mismo. 
-          </p>
-          <p>
-              <b>QUINTA. -</b> En caso de que una o más de las disposiciones contenidas en este contrato sea, por cualquier razón, inválida, 
-              ilegal o no pueda ejercitarse en cualquier aspecto, tal invalidez o ilegalidad no afectará cualquier otra disposición 
-              aquí prevista y este contrato será interpretado como si tal disposición inválida o ilegal nunca hubiera sido incluida.
-          </p>
-          <p>
-              <b>SEXTA. -</b> Las partes acuerdan que el presente contrato y/o su clausulado no podrán ser modificados sin el consentimiento 
-              expreso de ambas partes, por lo cual ninguna modificación será válida, salvo que se dé por escrito y firmada por representantes
-               autorizados por las partes mediante la que expresen su conformidad.
-          </p>
-          <p>
-             <b>SÉPTIMA. -</b>  Todo aviso o notificación que deban hacerse las partes respecto del presente contrato se realizará por escrito a los siguientes domicilios:
-          </p>
-          <br>
+              </p>
+              <p>
+                <b>TERCERA. -</b> En caso de que "EL RECEPTOR" incumpla con las obligaciones a su cargo, previstas en
+                este instrumento,
+                pagará a "EL TITULAR" una indemnización correspondiente a los daños y perjuicios que por este concepto
+                se generasen;
+                <b>además de las sanciones e indemnizaciones establecidas en el artículo 210 y 211 del Código Penal
+                  Federal.</b>
+              </p>
+              <p>
+                <b>CUARTA. -</b> La vigencia del presente contrato será de <b>cinco años</b> contados a partir de la
+                fecha de firma del mismo.
+              </p>
+              <p>
+                <b>QUINTA. -</b> En caso de que una o más de las disposiciones contenidas en este contrato sea, por
+                cualquier razón, inválida,
+                ilegal o no pueda ejercitarse en cualquier aspecto, tal invalidez o ilegalidad no afectará cualquier
+                otra disposición
+                aquí prevista y este contrato será interpretado como si tal disposición inválida o ilegal nunca hubiera
+                sido incluida.
+              </p>
+              <p>
+                <b>SEXTA. -</b> Las partes acuerdan que el presente contrato y/o su clausulado no podrán ser modificados
+                sin el consentimiento
+                expreso de ambas partes, por lo cual ninguna modificación será válida, salvo que se dé por escrito y
+                firmada por representantes
+                autorizados por las partes mediante la que expresen su conformidad.
+              </p>
+              <p>
+                <b>SÉPTIMA. -</b> Todo aviso o notificación que deban hacerse las partes respecto del presente contrato
+                se realizará por escrito a los siguientes domicilios:
+              </p>
+              <br>
 
-          <table>
-            <tr style="border: none;">
-              <td style='text-align:center'><b>"EL TITULAR":</b></td>
-              <td style='text-align:center'><b>"EL RECEPTOR":</b></td>
-            </tr>
-            <tr style="border: none;">
-              <td style='text-align:center'>
-                <p>
-                CALLE XXXXXXXXXXXXXX #XXXX    
-               </p>
-                <p>
-                COLONIA XXXXXXXXXXXXXXXX
-            </p>
-            <p>
-                CHIHUAHUA, CHIHUAHUA
-            </p>
-              </td> 
-              <td style='text-align:center'>            
-                <p>
-                CALLE JULIO MATÍAS PASCUAL # 6707  
-            </p>
-            <p>
-                FRACCIONAMIENTO RINCONES DE SAN FRANCISCO 
-            </p>
-            <p>
-                CHIHUAHUA, CHIHUAHUA
-            </p>
-            </td>  
-            </tr>
-          </table>
-          <p>
-              <b>OCTAVA. -</b> Para la interpretación y cumplimiento de este contrato, así como para la 
-              resolución de cualquier controversia relacionada con el mismo las partes convienen 
-              en que se apliquen las cláusulas de este contrato y las leyes de los Estados Unidos
-               Mexicanos y para todo lo relativo al mismo, se someterán a la Jurisdicción de los
+              <table>
+                <tr style="border: none;">
+                  <td style='text-align:center'><b>"EL TITULAR":</b></td>
+                  <td style='text-align:center'><b>"EL RECEPTOR":</b></td>
+                </tr>
+                <tr style="border: none;">
+                  <td style='text-align:center'>
+                    <p>
+                      CALLE XXXXXXXXXXXXXX #XXXX
+                    </p>
+                    <p>
+                      COLONIA XXXXXXXXXXXXXXXX
+                    </p>
+                    <p>
+                      CHIHUAHUA, CHIHUAHUA
+                    </p>
+                  </td>
+                  <td style='text-align:center'>
+                    <p>
+                      CALLE JULIO MATÍAS PASCUAL # 6707
+                    </p>
+                    <p>
+                      FRACCIONAMIENTO RINCONES DE SAN FRANCISCO
+                    </p>
+                    <p>
+                      CHIHUAHUA, CHIHUAHUA
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <p>
+                <b>OCTAVA. -</b> Para la interpretación y cumplimiento de este contrato, así como para la
+                resolución de cualquier controversia relacionada con el mismo las partes convienen
+                en que se apliquen las cláusulas de este contrato y las leyes de los Estados Unidos
+                Mexicanos y para todo lo relativo al mismo, se someterán a la Jurisdicción de los
                 Tribunales de la ciudad de Chihuahua, Chihuahua, México, renunciando expresamente
-                 a cualquier otro fuero que por cualquier causa pudiere corresponderles.  
-          </p>
-          <p>
-              <b>NOVENA. -</b> Ambas partes convienen en que el presente contrato contiene el acuerdo único y completo
-               entre ellas respecto del objeto del mismo, dejando sin efecto cualquier otro acuerdo previo, verbal
-                o escrito en relación con el objeto del mismo. 
-          </p>
-          <p>
-              <b>DECIMA. -</b> Las partes exponen que el presente contrato se encuentra libre de dolo, mala fe, lesión, violencia,
-               enriquecimiento ilícito y de cualquier otro vicio de la voluntad, por lo cual en este mismo acto y por este
+                a cualquier otro fuero que por cualquier causa pudiere corresponderles.
+              </p>
+              <p>
+                <b>NOVENA. -</b> Ambas partes convienen en que el presente contrato contiene el acuerdo único y completo
+                entre ellas respecto del objeto del mismo, dejando sin efecto cualquier otro acuerdo previo, verbal
+                o escrito en relación con el objeto del mismo.
+              </p>
+              <p>
+                <b>DECIMA. -</b> Las partes exponen que el presente contrato se encuentra libre de dolo, mala fe,
+                lesión, violencia,
+                enriquecimiento ilícito y de cualquier otro vicio de la voluntad, por lo cual en este mismo acto y por
+                este
                 instrumento renuncian expresamente a invocarlo en un futuro.
-          </p>
-          <p>
-              Leído que fue en todas sus partes el contenido del presente contrato y conociendo las partes contratantes el alcance de
-               todas las declaraciones y cláusulas lo suscriben por duplicado en la ciudad de Chihuahua, Chihuahua, México,
+              </p>
+              <p>
+                Leído que fue en todas sus partes el contenido del presente contrato y conociendo las partes
+                contratantes el alcance de
+                todas las declaraciones y cláusulas lo suscriben por duplicado en la ciudad de Chihuahua, Chihuahua,
+                México,
                 a los <b>XX días de xxxxxx de 20XX.</b>
-          </p>
-          <br>
-          <br>
-          <br>
-          <br>
-          <table >
-            <tr style="border: none;">
-              <td style='text-align:center'><b>POR “EL TITULAR”:</b></td>
-              <td style='text-align:center'><b>POR “EL RECEPTOR”:</b></td>
-            </tr>
-            <tr style="border: none;">
-              <td style='text-align:center'> <br>
-                <br>
-                <br>
-                _________________________________________
-                <br>
-                <b>XXXXXXXXXXXXXXXXXXXXXXXXX</b></td>
-              <td style='text-align:center'>  <br>
-                <br>
-                <br>
-                _________________________________________
-                <br>
-                <b>NOMBRE Y FIRMA </b></td>
-            </tr>
-          </table>
-          <br>
-          <br>
-          <p>
-            <b>INSTITUTO NACIONAL DE TRANSPARENCIA, 
-              ACCESO A LA INFORMACIÓN Y PROTECCIÓN DE DATOS PERSONALES.</b>
-          </p>
-          <br>
-          <p>
-            <b>C. XXXXXXXXXXXXXXXXX,</b> me permito solicitar el depósito y registro 
-            del contrato de privacidad y protección de datos personales, celebrado con la <b>C. ANA SOFIA ISLAS ENRÍQUEZ</b> para reafirmar nuestro compromiso de respeto y confidencialidad a los datos personales y procesos de nuestros clientes. 
-          </p>
-          <br>
-          <p>
-            Por lo cual solicito sea depositado y registrado ante esta H. Autoridad. 
-          </p>
-          <br><br><br><br><br><br><br>
-          <br><br><br><br><br><br><br>
-          <br><br><br><br><br><br><br>
-          <br><br><br><br><br><br><br>
-          <br><br><br><br><br>
-          <table style=" margin-left:10px;">
-            
-            <tr style="border: none;">
-              <td style='text-align:center'> <br>
-                <br>
-                <br>
-                _________________________________________
-                <br>
-                <b>NOMBRE Y FIRMA</b></td>
-              <td style='text-align:center'>  <br>
-                <br>
-                <br>
-                _________________
-                <br>
-                <b>HUELLA</b></td>
-            </tr>
-          </table>
-          <br>
-          <br>
-          <p>
-            <b>INSTITUTO NACIONAL DE TRANSPARENCIA, 
-              ACCESO A LA INFORMACIÓN Y PROTECCIÓN DE DATOS PERSONALES.</b>
-          </p>
-          <br>
-          <p>
-            <b>C. XXXXXXXXXXXXXXXXX,</b> me permito solicitar el depósito y registro 
-            del contrato de privacidad y protección de datos personales, celebrado con la <b>C. ANA SOFIA ISLAS ENRÍQUEZ</b> para reafirmar nuestro compromiso de respeto y confidencialidad a los datos personales y procesos de nuestros clientes. 
-          </p>
-          <br>
-          <p>
-            Por lo cual solicito sea depositado y registrado ante esta H. Autoridad. 
-          </p>
-          <br><br><br><br><br><br><br>
-          <br><br><br><br><br><br><br>
-          <br><br><br><br><br><br><br>
-          <br><br><br><br><br><br><br>
-          <br><br><br><br><br><br>
-          <table style=" margin-left:10px;">  
-            <tr style="border: none;">
-              <td style='text-align:center'> <br>
-                <br>
-                <br>
-                _________________________________________
-                <br>
-                <b>NOMBRE Y FIRMA</b></td>
-              <td style='text-align:center'>  <br>
-                <br>
-                <br>
-                _________________
-                <br>
-                <b>HUELLA</b></td>
-            </tr>
-          </table>
+              </p>
+              <br>
+              <br>
+              <br>
+              <br>
+              <table>
+                <tr style="border: none;">
+                  <td style='text-align:center'><b>POR “EL TITULAR”:</b></td>
+                  <td style='text-align:center'><b>POR “EL RECEPTOR”:</b></td>
+                </tr>
+                <tr style="border: none;">
+                  <td style='text-align:center'> <br>
+                    <br>
+                    <br>
+                    _________________________________________
+                    <br>
+                    <b>XXXXXXXXXXXXXXXXXXXXXXXXX</b>
+                  </td>
+                  <td style='text-align:center'> <br>
+                    <br>
+                    <br>
+                    _________________________________________
+                    <br>
+                    <b>NOMBRE Y FIRMA </b>
+                  </td>
+                </tr>
+              </table>
+              <br>
+              <br>
+              <p>
+                <b>INSTITUTO NACIONAL DE TRANSPARENCIA,
+                  ACCESO A LA INFORMACIÓN Y PROTECCIÓN DE DATOS PERSONALES.</b>
+              </p>
+              <br>
+              <p>
+                <b>C. XXXXXXXXXXXXXXXXX,</b> me permito solicitar el depósito y registro
+                del contrato de privacidad y protección de datos personales, celebrado con la <b>C. ANA SOFIA ISLAS
+                  ENRÍQUEZ</b> para reafirmar nuestro compromiso de respeto y confidencialidad a los datos personales y
+                procesos de nuestros clientes.
+              </p>
+              <br>
+              <p>
+                Por lo cual solicito sea depositado y registrado ante esta H. Autoridad.
+              </p>
+              <br><br><br><br><br><br><br>
+              <br><br><br><br><br><br><br>
+              <br><br><br><br><br><br><br>
+              <br><br><br><br><br><br><br>
+              <br><br><br><br><br>
+              <table style=" margin-left:10px;">
+
+                <tr style="border: none;">
+                  <td style='text-align:center'> <br>
+                    <br>
+                    <br>
+                    _________________________________________
+                    <br>
+                    <b>NOMBRE Y FIRMA</b>
+                  </td>
+                  <td style='text-align:center'> <br>
+                    <br>
+                    <br>
+                    _________________
+                    <br>
+                    <b>HUELLA</b>
+                  </td>
+                </tr>
+              </table>
+              <br>
+              <br>
+              <p>
+                <b>INSTITUTO NACIONAL DE TRANSPARENCIA,
+                  ACCESO A LA INFORMACIÓN Y PROTECCIÓN DE DATOS PERSONALES.</b>
+              </p>
+              <br>
+              <p>
+                <b>C. XXXXXXXXXXXXXXXXX,</b> me permito solicitar el depósito y registro
+                del contrato de privacidad y protección de datos personales, celebrado con la <b>C. ANA SOFIA ISLAS
+                  ENRÍQUEZ</b> para reafirmar nuestro compromiso de respeto y confidencialidad a los datos personales y
+                procesos de nuestros clientes.
+              </p>
+              <br>
+              <p>
+                Por lo cual solicito sea depositado y registrado ante esta H. Autoridad.
+              </p>
+              <br><br><br><br><br><br><br>
+              <br><br><br><br><br><br><br>
+              <br><br><br><br><br><br><br>
+              <br><br><br><br><br><br><br>
+              <br><br><br><br><br><br>
+              <table style=" margin-left:10px;">
+                <tr style="border: none;">
+                  <td style='text-align:center'> <br>
+                    <br>
+                    <br>
+                    _________________________________________
+                    <br>
+                    <b>NOMBRE Y FIRMA</b>
+                  </td>
+                  <td style='text-align:center'> <br>
+                    <br>
+                    <br>
+                    _________________
+                    <br>
+                    <b>HUELLA</b>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-   </div>
   </div>
-  </div>
-</div>
 </div>
