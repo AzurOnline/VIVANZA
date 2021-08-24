@@ -31,9 +31,9 @@ export class CalendarComponent implements OnInit {
     eventResize: this.handleResizeEvent.bind(this),
     eventDrop: this.handleDropEvent.bind(this),
 
-    validRange: {
-      start: Date.now(),
-    },
+    // validRange: {
+    //   start: Date.now(),
+    // },
 
     businessHours: {
       // Dias de la semana en numeros (0 es dia Domingo)
@@ -160,12 +160,23 @@ export class CalendarComponent implements OnInit {
       let _response;
       _response = response;
 
-      _response.success.recordset.forEach(element => {
+      _response.success.recordsets[0].forEach(element => {
         var evento = {
           id: element.id,
           title: element.title,
           start: element.startDate,
           end: element.endDate,
+          allDay: element.allDay
+        };
+        this.eventos.push(evento);
+      });
+
+      _response.success.recordsets[1].forEach(element => {
+        var evento = {
+          title: element.tipo + ': ' + element.cliente,
+          start: element.proximo_contacto,
+          end: element.proximo_contacto,
+          // event: element.proximo_contacto,
           allDay: element.allDay
         };
         this.eventos.push(evento);
