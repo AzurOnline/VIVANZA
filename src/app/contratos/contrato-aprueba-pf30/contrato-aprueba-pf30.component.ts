@@ -21,13 +21,29 @@ export class ContratoApruebaPf30Component implements OnInit {
 
   public exportarPdf() {
 
-    const doc = new jsPDF();
+    pdfMake.fonts = {
+      CenturyGothic: {
+        normal: '07558_CenturyGothic.ttf',
+        bold: '07553_CenturyGothicBold.ttf',
+        italics: '07556_CenturyGothicItalic.ttf',
+        bolditalics: '07724_CGOTHICBI.ttf'
+      }
+    }
 
     const printableElement = this.printableElement.nativeElement;
 
     var html = htmlToPdfmake(printableElement.innerHTML);
 
-    const documentDefinition = { content: html  };
+    const documentDefinition = {
+      content: html,
+      pageSize: 'LEGAL',
+      defaultStyle: {
+        font: 'CenturyGothic'
+      }
+    };
+
+
+
     pdfMake.createPdf(documentDefinition).open();
 
   }
