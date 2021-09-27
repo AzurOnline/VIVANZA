@@ -62,8 +62,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '@fortawesome/fontawesome-free/css/all.css'; // needs additional webpack config!
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from "@fullcalendar/interaction"; // a plugin
-import timeGridPlugin from '@fullcalendar/timegrid';
-import bootstrapPlugin from '@fullcalendar/bootstrap';
+import timeGridPlugin from '@fullcalendar/timegrid'; // a plugin
+import bootstrapPlugin from '@fullcalendar/bootstrap'; // a plugin
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { CalendarComponent } from './examples/calendar/calendar.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';

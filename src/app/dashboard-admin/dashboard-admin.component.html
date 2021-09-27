@@ -44,6 +44,10 @@
         <button mat-button (click)="Filtrar()">Filtrar</button>
       </mat-card-actions>
     </mat-card>
+    <!--Calendario-->
+    <mat-card>
+      <app-calendar></app-calendar>
+    </mat-card>
     <mat-grid-list cols="2" rowHeight="350px">
       <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
         <mat-card class="dashboard-card">
