@@ -50,7 +50,8 @@ export class DashboardAdminComponent {
 
   canvasCanales: any;
   canvasInteres: any;
-  ctx: any;
+  ctxCanales: any;
+  ctxInteres: any;
 
   public fecha_fin;
   public fecha_ini;
@@ -69,7 +70,8 @@ export class DashboardAdminComponent {
   private etiquetasGraficaInteres = [];
   private datasetGraficaCanales = [];
   private datasetGraficaInteres = [];
-  private coloresGrafica = ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 206, 86, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(153, 102, 255, 0.5)'];
+  private coloresGraficaCanales = ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 206, 86, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(153, 102, 255, 0.5)'];
+  private coloresGraficaInteres = ['rgba(153, 102, 255, 0.5)','rgba(75, 192, 192, 0.5)','rgba(255, 206, 86, 0.5)','rgba(54, 162, 235, 0.5)','rgba(255, 99, 132, 0.5)'];
 
   dtOptions: DataTables.Settings = {};
 
@@ -152,9 +154,9 @@ export class DashboardAdminComponent {
       // this.datasetGrafica = _response.success.recordsets[1];
 
       this.canvasCanales = document.getElementById('PieChartCanales');
-      this.ctx = this.canvasCanales.getContext('2d');
+      this.ctxCanales = this.canvasCanales.getContext('2d');
 
-      var chartCanales = new Chart(this.ctx, {
+      var chartCanales = new Chart(this.ctxCanales, {
         type: 'pie',
         data: {
           //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -162,16 +164,16 @@ export class DashboardAdminComponent {
           datasets: [{
             label: 'Vistas por canal',
             data: this.datasetGraficaCanales,
-            backgroundColor: this.coloresGrafica,
+            backgroundColor: this.coloresGraficaCanales,
             borderWidth: 1
           }]
         }
       });
 
       this.canvasInteres = document.getElementById('PieChartInteres');
-      this.ctx = this.canvasInteres.getContext('2d');
+      this.ctxInteres = this.canvasInteres.getContext('2d');
 
-      var chartInteres = new Chart(this.ctx, {
+      var chartInteres = new Chart(this.ctxInteres, {
         type: 'polarArea',
         data: {
           //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -179,7 +181,7 @@ export class DashboardAdminComponent {
           datasets: [{
             label: 'Vistas por canal',
             data: this.datasetGraficaInteres,
-            backgroundColor: this.coloresGrafica,
+            backgroundColor: this.coloresGraficaInteres,
             borderWidth: 1
           }]
         }
